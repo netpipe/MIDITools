@@ -1,0 +1,205 @@
+#include <MIDI.h>
+
+// ******************************************
+// Variables definitions
+// ******************************************
+
+// *********************
+// Buttons Multiplexing Variables
+// Definition of pins
+int buttonsMuxClockPin = 7;
+int buttonsMuxLatchPin = 8;
+int buttonsMuxDataPin = 9;
+
+// Define variables to hold the data
+// for each shift register.
+byte muxButtons1 = 0;
+byte muxButtons2 = 0;
+byte muxButtons3 = 0;
+byte muxButtons4 = 0;
+byte muxButtons5 = 0;
+byte muxButtons6 = 0;
+byte muxButtons7 = 0;
+
+// General midi notes
+char buttonsMuxNotes1[] = {0, 1, 2, 3, 4, 5, 6, 7};
+char buttonsMuxNotes2[] = {8, 9, 10, 11, 12, 13, 14, 15};
+char buttonsMuxNotes3[] = {0, 1, 2, 3, 4, 5, 6, 7};
+char buttonsMuxNotes4[] = {93, 94, 95, 96, 97, 98, 99, 100};
+char buttonsMuxNotes5[] = {0, 1, 2, 3, 4, 5, 6, 7};
+char buttonsMuxNotes6[] = {75, 76, 77, 78, 79, 90, 91, 92};
+char buttonsMuxNotes7[] = {8, 9, 10, 11, 12, 13, 14, 15};
+
+// Status of each button of the mux
+boolean buttonsMuxStatus1[] = {0,0,0,0,0,0,0,0};
+boolean buttonsMuxStatus2[] = {0,0,0,0,0,0,0,0};
+boolean buttonsMuxStatus3[] = {0,0,0,0,0,0,0,0};
+boolean buttonsMuxStatus4[] = {0,0,0,0,0,0,0,0};
+boolean buttonsMuxStatus5[] = {0,0,0,0,0,0,0,0};
+boolean buttonsMuxStatus6[] = {0,0,0,0,0,0,0,0};
+boolean buttonsMuxStatus7[] = {0,0,0,0,0,0,0,0};
+
+// Midi channel where to send notes for each mux
+int buttonsMuxMidiChannel1 = 1;
+int buttonsMuxMidiChannel2 = 1;
+int buttonsMuxMidiChannel3 = 2;
+int buttonsMuxMidiChannel4 = 2;
+int buttonsMuxMidiChannel5 = 8;
+int buttonsMuxMidiChannel6 = 8;
+int buttonsMuxMidiChannel7 = 16;
+
+// Debounce settings
+long muxButtonsTime = 0;         // the last time the output pin was toggled
+long muxButtonsDebounce = 100;   // the debounce time, increase if the output flickers
+
+// *********************
+// Set up application
+// *********************
+void setup() {
+ // Standard serial begin
+ // Serial.begin(9600);
+ // Midi serial begin
+ Serial.begin(31250);
+
+ // Buttons Mux
+ // Define pin modes
+ pinMode(buttonsMuxLatchPin, OUTPUT);
+ pinMode(buttonsMuxClockPin, OUTPUT);
+ pinMode(buttonsMuxDataPin, INPUT);
+}
+
+// ******************************************
+// Main Loop
+// ******************************************
+void loop() {
+ // Butons Mux
+ // Function that handles digital mux for buttons
+ startReadingButtonMux();
+}
+
+// ******************************************
+// Buttons Mux
+// ******************************************
+// Activate Digital Mux for Buttons
+void startReadingButtonMux() {
+ //  Pulse the latch pin:
+ //  Set it to 1 to collect parallel data
+ digitalWrite(buttonsMuxLatchPin, HIGH);
+ // .... collecting data from digital inputs of MUX ... wait ...
+ delayMicroseconds(20);
+ // Set it to 0 to transmit data serially  
+ digitalWrite(buttonsMuxLatchPin, LOW);
+
+ // While the shift register is in serial mode
+ //collect each shift register into a byte
+ //the register attached to the chip comes in first
+ muxButtons1 = shiftIn(buttonsMuxDataPin, buttonsMuxClockPin);
+ muxButtons2 = shiftIn(buttonsMuxDataPin, buttonsMuxClockPin);
+ muxButtons3 = shiftIn(buttonsMuxDataPin, buttonsMuxClockPin);
+ muxButtons4 = shiftIn(buttonsMuxDataPin, buttonsMuxClockPin);
+ muxButtons5 = shiftIn(buttonsMuxDataPin, buttonsMuxClockPin);
+ muxButtons6 = shiftIn(buttonsMuxDataPin, buttonsMuxClockPin);
+ muxButtons7 = shiftIn(buttonsMuxDataPin, buttonsMuxClockPin);
+
+ analyzeButtonsMux(muxButtons1, buttonsMuxNotes1, buttonsMuxStatus1, buttonsMuxMidiChannel1);
+ analyzeButtonsMux(muxButtons2, buttonsMuxNotes2, buttonsMuxStatus2, buttonsMuxMidiChannel2);
+ analyzeButtonsMux(muxButtons3, buttonsMuxNotes3, buttonsMuxStatus3, buttonsMuxMidiChannel3);
+ analyzeButtonsMux(muxButtons4, buttonsMuxNotes4, buttonsMuxStatus4, buttonsMuxMidiChannel4);
+ analyzeButtonsMux(muxButtons5, buttonsMuxNotes5, buttonsMuxStatus5, buttonsMuxMidiChannel5);
+ analyzeButtonsMux(muxButtons6, buttonsMuxNotes6, buttonsMuxStatus6, buttonsMuxMidiChannel6);
+ analyzeButtonsMux(muxButtons7, buttonsMuxNotes7, buttonsMuxStatus7, buttonsMuxMidiChannel7);
+}
+
+// ShiftIn function
+// Just needs the location of the data pin and the clock pin
+// it returns a byte with each bit in the byte corresponding
+// to a pin on the shift register. leftBit 7 = Pin 7 / Bit 0= Pin 0
+byte shiftIn(int myDataPin, int myClockPin) {
+ int i;
+ int temp = 0;
+  // int pinState;
+ byte myDataIn = 0;
+
+ pinMode(myClockPin, OUTPUT);
+ pinMode(myDataPin, INPUT);
+
+ // we will be holding the clock pin high 8 times (0,..,7) at the
+ // end of each time through the for loop
+
+ // at the begining of each loop when we set the clock low, it will
+ // be doing the necessary low to high drop to cause the shift
+ // register's DataPin to change state based on the value
+ // of the next bit in its serial information flow.
+ // The register transmits the information about the pins from pin 7 to pin 0
+ // so that is why our function counts down
+ 
+ // Loop for all the pins of the shift reg.
+ for (i=7; i>=0; i--)
+ {
+   digitalWrite(myClockPin, LOW);
+   delayMicroseconds(2);
+   temp = digitalRead(myDataPin);
+   if (temp) {
+     // pinState = 1;
+     // Set the bit to 1 no matter what
+     myDataIn = myDataIn | (1 << i);
+   }
+   else {
+     //turn it off -- only necessary for debuging
+     //print statement since myDataIn starts as 0
+     // pinState = 0;
+   }
+
+   //Debuging print statements
+   // Serial.print("Valore Pin: ");
+   // Serial.print(pinState);
+   // Serial.print(" - ");
+   //Serial.println (dataIn, BIN);
+   digitalWrite(myClockPin, HIGH);
+ }
+ //debuging print statements whitespace
+ //Serial.println();
+ //Serial.println(myDataIn, BIN);
+ return myDataIn;
+}
+
+// Function that analiyzes the data from the Mux
+// Parameters:
+// 1. Byte with the state of the 8 pins
+// 2. Array of notes corresponfding to the 8 pins
+// 3. Array off boolean values indicates the actual status of each not/pin
+// 4. Midi channel to send the midi data for the 8 notes of the mux
+void analyzeButtonsMux(byte incomingData, char* muxNotes, boolean* muxStatus, int midiChannel) {
+ // Loop thru the Byte
+ for (int n=0; n<=7; n++)
+ {
+   // if 'n' value equals 1
+   if (incomingData & (1 << n) ){
+     //print the value of the array location
+     // Pin "i" has value 1!
+     // If that note was not playing.....
+     if(muxStatus[n] == 0 && (millis() - muxButtonsTime > muxButtonsDebounce) ) { // Some debouncing here
+       // playMuxOnNotes(n, muxNotes, midiChannel);
+       sendMidi(NoteOn, muxNotes[n], 120, midiChannel);
+       muxStatus[n] = 1;
+       muxButtonsTime = millis(); // Reset debouncing variables
+     }
+   } else {
+     if(muxStatus[n] == 1 && (millis() - muxButtonsTime > muxButtonsDebounce) ) { // If that note was already playing .... Some debouncing here
+       // playMuxOffNotes(n, muxNotes, midiChannel);
+       sendMidi(NoteOff, muxNotes[n], 120, midiChannel);
+       muxStatus[n] = 0;
+       muxButtonsTime = millis(); // Reset debouncing variables
+     }
+   }
+ }
+}
+
+// ******************************************
+// MIDI Functions
+// ******************************************
+// Send a MIDI note-on/off message.  
+void sendMidi(char cmd, char data1, char data2, int midiChannel) {
+ // Based on midi library
+ MIDI.send(cmd, data1, data2, midiChannel);
+}
