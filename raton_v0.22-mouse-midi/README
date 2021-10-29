@@ -1,0 +1,85 @@
+
+Ratón
+An open source Linux MIDI controller
+
+Ratón features include:
+
+    * Mouse input
+    * Tracks and outputs controllers in two dimensions
+    * Assign separate channel, controller to each dimension
+    * ALSA MIDI seq output
+    * Editable map curves
+    * Saves and loads project files
+    * Saves and loads curves
+    * Doesn't need focus to track mouse
+    * Reverse and invert curves
+    * Curve presets
+    * Assign freeze point
+    * Resizable
+    * GPL license
+
+Ratón translates mouse movements into MIDI controller messages. Those movements
+are mapped through a user-defineable curve, which can change the characteristics
+of the mouse's location. Changing the curve can then expand, contract or step 
+the controller messages to match the specific purpose.
+
+Ratón uses the ALSA sequencer MIDI interface, so audio apps such as JACK-rack, 
+MuSE or Rosegarden can use it's controller stream.
+
+----------------------------------------------------------------
+Requirements
+
+Ratón is a GTK+ project, designed with Glade-2. It uses:
+
+    * GTK+ libraries (anything >= 2.4)
+    * The ALSA library
+
+Development files (includes) for both are also required.
+
+Automake >= 1.4 & autoconf >= 2.52 are also needed to build the code.
+ 
+----------------------------------------------------------------
+Building and Installing
+
+Compile Ratón like any GNU autoconf/automake project:
+
+1) Untar the source file
+2) Open a shell in the project dir
+3) Enter (and wait for completion of each stage):
+
+	./autogen.sh
+	make
+	make install
+
+'make install' must be executed as root, or it will fail. But the project can be
+compiled and used locally by any user.
+
+Also, an optional step would be to strip the debugging info from the file, which
+can reduce the size 10:1. After 'make' but before 'make install', enter:
+
+strip src/raton
+
+Read the INSTALL file for more info (should be linked in the project dir.)
+----------------------------------------------------------------
+Known problems, etc.
+
+Version 0.2
+
+Unfortunately, I chose the GtkCurve widget as the basis of the curve edit function
+in Ratón. However, GtkCurve has severe limitations--control points cannot be 
+explicitly defined, and therefore cannot be restored. For this reason (and others),
+the widget is now tagged as depreciated (in the GTK+ API.)
+
+When reediting a complex curve, much of the accuracy will be lost. However, the 
+initial edit will be accurate, and can be saved as a project file or a curve file.
+
+Also, a work-around is possible--Free curves are always accurate. A bug exists in
+Ratón which has been left in as a 'feature'. When faced with an inaccurate curve
+in a reedit, click the 'Free' button and then 'Cancel'. Conceptually, 'Cancel'
+should abort the curve type change, but this 'bug' allows a type change without
+altering the curve. When edited again the curve will be a free-hand type, and will
+retain it's original shape. Of course, the 'spline' and 'linear' types are the most
+useful, so this is a compromise at best.
+
+Eventually, the edit curve function will have to be rewritten, and replaced with a
+custom widget. 
