@@ -74,7 +74,7 @@ void errormessage(const char *format, ...);
 ///////////////////////////////////////////////////////////////////////////
 
 int main(int argc, char *argv[]) {
-   int status;
+   int status;alsarawmidiout.c
    int mode = SND_RAWMIDI_SYNC;
    snd_rawmidi_t* midiout = NULL;
    const char* portname = "hw:1,0,0";  // see alsarawportlist.c example program
