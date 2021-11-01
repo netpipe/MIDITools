@@ -12,40 +12,33 @@
 #include <QDebug>
 
 #define DEVICE "/dev/midi"
+int status;
+int mode = SND_RAWMIDI_SYNC;
+    snd_rawmidi_t* midiout = NULL;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+      const char* portname = "hw:2,0,0";
+
+    if ((status = snd_rawmidi_open(NULL, &midiout, portname, mode)) < 0) {
+        qDebug() << "Problem opening MIDI output:" << status;
+       exit(1);
+    }
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+        snd_rawmidi_close(midiout);
 }
 
-//void  print_midi_ports          (void);
-//void  print_card_list           (void);
-//void  list_midi_devices_on_card (int card);
-//void  list_subdevice_info       (snd_ctl_t *ctl, int card, int device);
-//int   is_input                  (snd_ctl_t *ctl, int card, int device, int sub);
-//int   is_output                 (snd_ctl_t *ctl, int card, int device, int sub);
-//void  error                     (const char *format, ...);
 
 void MainWindow::on_pushButton_clicked()
 {
-    int status;
-    int mode = SND_RAWMIDI_SYNC;
-    snd_rawmidi_t* midiout = NULL;
-    const char* portname = "hw:2,0,0";  // see alsarawportlist.c example program
-    //if ((argc > 1) && (strncmp("hw:", argv[1], 3) == 0)) {
-       portname = "hw:2";
-  //  }
-    if ((status = snd_rawmidi_open(NULL, &midiout, portname, mode)) < 0) {
-        qDebug() << "Problem opening MIDI output:" << status;
-       exit(1);
-    }
+
 
     char noteon[3]  = {static_cast<char>(0x90), 60, 100};
     char noteoff[3] = {static_cast<char>(0x90), 60, 0};
@@ -62,8 +55,7 @@ void MainWindow::on_pushButton_clicked()
        exit(1);
     }
 
-    snd_rawmidi_close(midiout);
-    midiout = NULL;    // snd_rawmidi_close() does not clear invalid pointer,
+    // midiout = NULL;    // snd_rawmidi_close() does not clear invalid pointer,
 }
 
 void MainWindow::on_pushButton_2_clicked()
