@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=drumkit
+Exec=drumkit
+Icon=assets/drumkit.png
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
+X-Ubuntu-Supported-Orientations=landscape
+Name[en_US]=drumkit.desktop
