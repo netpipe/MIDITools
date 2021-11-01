@@ -1,14 +1,14 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
-// Creation Date: Sat May  9 18:57:48 PDT 2009
-// Last Modified: Sat May  9 19:48:31 PDT 2009
-// Filename:      alsarawmidiout.c
+// Creation Date: Sat May  9 22:03:40 PDT 2009
+// Last Modified: Sat May  9 22:03:46 PDT 2009
+// Filename:      alsarawmidiin.c
 // Syntax:        C; ALSA 1.0
 // $Smake:        gcc -o %b %f -lasound
 //
-// Description:	  Send a MIDI note to a synthesizer using the ALSA rawmidi 
-//                interface.  Reverse engineered from amidi.c (found in 
-//                ALSA utils 1.0.19 program set).
+// Description:	  Receive MIDI data from a synthesizer using the ALSA rawmidi 
+//                interface.  Reversed engineered from amidi.c (found in ALSA 
+//                utils 1.0.19 program set).
 //
 // First double-check that you have the ALSA system installed on your computer
 // by running this command-line command:
@@ -27,19 +27,6 @@
 // error when device is already occupied with another application. This
 // flag also changes behaviour of snd_rawmidi_write() and snd_rawmidi_read()
 // returning -EAGAIN when no more bytes can be processed.
-//
-// Using SND_RAWMIDI_APPEND flag (output only) instruct device driver to
-// append contents of written buffer - passed by snd_rawmidi_write() -
-// atomically to output ring buffer in the kernel space. This flag also
-// means that the device is not opened exclusively, so more applications can
-// share given rawmidi device. Note that applications must send the whole
-// MIDI message including the running status, because another writting
-// application might break the MIDI message in the output buffer.
-//
-// Using SND_RAWMIDI_SYNC flag (output only) assures that the contents of
-// output buffer specified using snd_rawmidi_write() is always drained before
-// the function exits. This behaviour is the same as snd_rawmidi_write()
-// followed immediately by snd_rawmidi_drain().
 //
 // http://www.alsa-project.org/alsa-doc/alsa-lib/group___raw_midi.html
 //
@@ -66,7 +53,6 @@
 //
 
 #include <alsa/asoundlib.h>     /* Interface to the ALSA system */
-#include <unistd.h>             /* for sleep() function */
 
 // function declarations:
 void errormessage(const char *format, ...);
@@ -76,33 +62,37 @@ void errormessage(const char *format, ...);
 int main(int argc, char *argv[]) {
    int status;
    int mode = SND_RAWMIDI_SYNC;
-   snd_rawmidi_t* midiout = NULL;
-   const char* portname = "hw:2,0,0";  // see alsarawportlist.c example program
+   snd_rawmidi_t* midiin = NULL;
+   const char* portname = "hw:1,0,0";  // see alsarawportlist.c example program
    if ((argc > 1) && (strncmp("hw:", argv[1], 3) == 0)) {
       portname = argv[1];
    }
-   if ((status = snd_rawmidi_open(NULL, &midiout, portname, mode)) < 0) {
-      errormessage("Problem opening MIDI output: %s", snd_strerror(status));
+   if ((status = snd_rawmidi_open(&midiin, NULL, portname, mode)) < 0) {
+      errormessage("Problem opening MIDI input: %s", snd_strerror(status));
       exit(1);
    }
 
-   char noteon[3]  = {0x90, 60, 100};
-   char noteoff[3] = {0x90, 60, 0};
-
-   if ((status = snd_rawmidi_write(midiout, noteon, 3)) < 0) {
-      errormessage("Problem writing to MIDI output: %s", snd_strerror(status));
-      exit(1);
+   int maxcount = 1000;   // Exit after this many bytes have been received.
+   int count = 0;         // Current count of bytes received.
+   char buffer[1];        // Storage for input buffer received
+   while (count < maxcount) {
+      if ((status = snd_rawmidi_read(midiin, buffer, 1)) < 0) {
+         errormessage("Problem reading MIDI input: %s", snd_strerror(status));
+      }
+      count++;
+      if ((unsigned char)buffer[0] >= 0x80) {   // command byte: print in hex
+         printf("0x%x ", (unsigned char)buffer[0]);
+      } else {
+         printf("%d ", (unsigned char)buffer[0]);
+      }
+      fflush(stdout);
+      if (count % 20 == 0) {  // print a newline to avoid line-wrapping
+         printf("\n");
+      }
    }
 
-   sleep(1);  // pause the program for one second to allow note to sound.
-
-   if ((status = snd_rawmidi_write(midiout, noteoff, 3)) < 0) {
-      errormessage("Problem writing to MIDI output: %s", snd_strerror(status));
-      exit(1);
-   }
-
-   snd_rawmidi_close(midiout);
-   midiout = NULL;    // snd_rawmidi_close() does not clear invalid pointer,
+   snd_rawmidi_close(midiin);
+   midiin  = NULL;    // snd_rawmidi_close() does not clear invalid pointer,
    return 0;          // so might be a good idea to erase it after closing.
 }
 
@@ -110,7 +100,7 @@ int main(int argc, char *argv[]) {
 
 //////////////////////////////
 //
-// error -- Print an error message.
+// error -- print error message
 //
 
 void errormessage(const char *format, ...) {
