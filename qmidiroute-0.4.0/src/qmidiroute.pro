@@ -11,6 +11,7 @@ LIBS += -lasound
 # Input
 HEADERS += logwidget.h \
            main.h \
+           mainwindow.h \
            mapdata.h \
            mapwidget.h \
            midimap.h \
@@ -18,6 +19,7 @@ HEADERS += logwidget.h \
            seqdriver.h
 SOURCES += logwidget.cpp \
            main.cpp \
+           mainwindow.cpp \
            mapdata.cpp \
            mapwidget.cpp \
            midimap.cpp \

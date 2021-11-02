@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 
     // translator for qmidroute messages       
     QTranslator qmidirouteTr;
-
+QString TRANSLATIONSDIR="./";
     if (qmidirouteTr.load(QString(PACKAGE "_") + loc.name(), TRANSLATIONSDIR))
         app.installTranslator(&qmidirouteTr);
 
