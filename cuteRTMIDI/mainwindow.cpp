@@ -33,12 +33,10 @@ std::vector< unsigned char > *message2;
 
 void mycallback( double deltatime, std::vector< unsigned char > *message, void */*userData*/ )
 {
-  unsigned int nBytes = message->size();
-  for ( unsigned int i=0; i<nBytes; i++ )
-    std::cout << "Byte " << i << " = " << (int)message->at(i) << ", ";
+    std::cout << (int)message->at(0) << ", "<< (int)message->at(1) << ", " << (int)message->at(2) << std::endl;
 
-  message2 = message;
-  qDebug()<< message;
+//  message2 = message;
+//  qDebug()<< message;
 
 }
 
@@ -156,4 +154,9 @@ void MainWindow::on_virtInBTN_clicked()
 //cleanup:
 
 // delete midiin;
+}
+
+void MainWindow::on_getlastmessage_clicked()
+{
+    sendMessage2();
 }

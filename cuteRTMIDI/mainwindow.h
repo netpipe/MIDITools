@@ -28,6 +28,8 @@ private slots:
 
 
 
+    void on_getlastmessage_clicked();
+
 private:
     Ui::MainWindow *ui;
     RtMidiIn  *midiin = 0;
