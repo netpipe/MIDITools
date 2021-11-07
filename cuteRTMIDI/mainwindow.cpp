@@ -14,7 +14,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <signal.h>
-#include "RtMidi.h"
+
 // Platform-dependent sleep routines.
 #if defined(WIN32)
   #include <windows.h>
@@ -27,88 +27,75 @@
 bool done;
 static void finish( int /*ignore*/ ){ done = true; }
 
-void usage( void ) {
-  // Error function in case of incorrect command-line
-  // argument specifications.
-  std::cout << "\nusage: qmidiin <port>\n";
-  std::cout << "    where port = the device to use (first / default = 0).\n\n";
-  exit( 0 );
-}
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    std::map<int, std::string> apiMap;
+ //   apiMap[RtMidi::MACOSX_CORE] = "OS-X CoreMIDI";
+ //   apiMap[RtMidi::WINDOWS_MM] = "Windows MultiMedia";
+ //   apiMap[RtMidi::UNIX_JACK] = "Jack Client";
+    apiMap[RtMidi::LINUX_ALSA] = "Linux ALSA";
+  //  apiMap[RtMidi::RTMIDI_DUMMY] = "RtMidi Dummy";
+
+    std::vector< RtMidi::Api > apis;
+    RtMidi :: getCompiledApi( apis );
+
+    for ( unsigned int i=0; i<apis.size(); i++ )
+      std::cout << "  " << apiMap[ apis[i] ] << std::endl;
+
+    RtMidiIn  *midiin = 0;
+    RtMidiOut *midiout = 0;
+
+    try {
+
+    midiin = new RtMidiIn();
+
+    std::cout << "\nCurrent input API: " << apiMap[ midiin->getCurrentApi() ] << std::endl;
+
+    // Check inputs.
+    unsigned int nPorts = midiin->getPortCount();
+    std::cout << "\nThere are " << nPorts << " MIDI input sources available.\n";
+
+    for ( unsigned i=0; i<nPorts; i++ ) {
+      std::string portName = midiin->getPortName(i);
+      std::cout << "  Input Port #" << i << ": " << portName << '\n';
+    }
+
+    // RtMidiOut constructor ... exception possible
+    midiout = new RtMidiOut();
+
+    std::cout << "\nCurrent output API: " << apiMap[ midiout->getCurrentApi() ] << std::endl;
+
+    // Check outputs.
+    nPorts = midiout->getPortCount();
+    std::cout << "\nThere are " << nPorts << " MIDI output ports available.\n";
+
+    for ( unsigned i=0; i<nPorts; i++ ) {
+      std::string portName = midiout->getPortName(i);
+      std::cout << "  Output Port #" << i << ": " << portName << std::endl;
+    }
+    std::cout << std::endl;
+
+  } catch ( RtMidiError &error ) {
+    error.printMessage();
+  }
+
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-  delete midiin;
+    delete midiin;
+    delete midiout;
 }
 
 
 void MainWindow::on_pushButton_clicked()
 {
 
-
-
-  RtMidiIn *midiin = 0;
-  std::vector<unsigned char> message;
-  int nBytes, i;
-  double stamp;
-
-  // Minimal command-line check.
-  if ( argc > 2 ) usage();
-
-  // RtMidiIn constructor
-  try {
-    midiin = new RtMidiIn();
-  }
-  catch ( RtMidiError &error ) {
- //   error.printMessage();
-    exit( EXIT_FAILURE );
-  }
-
-  // Check available ports vs. specified.
-  unsigned int port = 0;
-  unsigned int nPorts = midiin->getPortCount();
-  if ( argc == 2 ) port = (unsigned int) atoi( argv[1] );
-  if ( port >= nPorts ) {
-    delete midiin;
-    std::cout << "Invalid port specifier!\n";
-    usage();
-  }
-
-  try {
-    midiin->openPort( port );
-  }
-  catch ( RtMidiError &error ) {
-    error.printMessage();
-   // goto cleanup;
-  }
-
-  // Don't ignore sysex, timing, or active sensing messages.
-  midiin->ignoreTypes( false, false, false );
-
-  // Install an interrupt handler function.
-  done = false;
-  (void) signal(SIGINT, finish);
-
-  // Periodically check input queue.
-  std::cout << "Reading MIDI from port " << midiin->getPortName() << " ... quit with Ctrl-C.\n";
-  while ( !done ) {
-    stamp = midiin->getMessage( &message );
-    nBytes = message.size();
-    for ( i=0; i<nBytes; i++ )
-      std::cout << "Byte " << i << " = " << (int)message[i] << ", ";
-    if ( nBytes > 0 )
-      std::cout << "stamp = " << stamp << std::endl;
-
-    // Sleep for 10 milliseconds.
-    SLEEP( 10 );
-  }
 
 
 }
