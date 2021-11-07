@@ -29,23 +29,29 @@
 bool done;
 static void finish( int /*ignore*/ ){ done = true; }
 
+std::vector< unsigned char > *message2;
 
 void mycallback( double deltatime, std::vector< unsigned char > *message, void */*userData*/ )
 {
   unsigned int nBytes = message->size();
   for ( unsigned int i=0; i<nBytes; i++ )
     std::cout << "Byte " << i << " = " << (int)message->at(i) << ", ";
-  if ( nBytes > 0 )
-    std::cout << "stamp = " << deltatime << std::endl;
 
-  std::vector<unsigned char> message2;
-message2[0] = 144;
-message2[1] = 64;
-message2[2] = 90;
-midiout->sendMessage( &message2 );
+  message2 = message;
+  qDebug()<< message;
 
 }
 
+
+void MainWindow::sendMessage2(){
+
+    QString test2;
+    unsigned int nBytes = message2->size();
+    for ( unsigned int i=0; i<nBytes; i++ )
+      test2 += QString((int)message2->at(i)) ;
+
+  ui->messagesList->addItem(test2.toLatin1());
+}
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)

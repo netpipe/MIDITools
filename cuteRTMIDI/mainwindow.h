@@ -16,6 +16,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+   void sendMessage2();
+
 private slots:
     void on_pushButton_clicked();
     void on_pushButton_3_clicked();
@@ -23,6 +25,8 @@ private slots:
     void on_listPortsBTN_clicked();
 
     void on_virtInBTN_clicked();
+
+
 
 private:
     Ui::MainWindow *ui;
