@@ -27,6 +27,17 @@
 bool done;
 static void finish( int /*ignore*/ ){ done = true; }
 
+
+void mycallback( double deltatime, std::vector< unsigned char > *message, void */*userData*/ )
+{
+  unsigned int nBytes = message->size();
+  for ( unsigned int i=0; i<nBytes; i++ )
+    std::cout << "Byte " << i << " = " << (int)message->at(i) << ", ";
+  if ( nBytes > 0 )
+    std::cout << "stamp = " << deltatime << std::endl;
+}
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -61,7 +72,7 @@ MainWindow::MainWindow(QWidget *parent)
     for ( unsigned i=0; i<nPorts; i++ ) {
       std::string portName = midiin->getPortName(i);
       std::cout << "  Input Port #" << i << ": " << portName << '\n';
-        ui->inoutcmb->addItem( portName.c_str() );
+        ui->inoutcmb->addItem( portName.c_str() + QString("a    ")  + QString::number(i) );
     }
 
     // RtMidiOut constructor ... exception possible
@@ -76,15 +87,15 @@ MainWindow::MainWindow(QWidget *parent)
     for ( unsigned i=0; i<nPorts; i++ ) {
       std::string portName = midiout->getPortName(i);
       std::cout << "  Output Port #" << i << ": " << portName << std::endl;
-      ui->inoutcmb->addItem( portName.c_str() );
+      ui->inoutcmb->addItem( portName.c_str() + QString("a    ") + QString::number(i).toLatin1() );
     }
     std::cout << std::endl;
 
   } catch ( RtMidiError &error ) {
     error.printMessage();
   }
-
-
+midiin->closePort();
+midiout->closePort();
 }
 
 MainWindow::~MainWindow()
@@ -98,8 +109,6 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
 
-
-
 }
 
 //#include "src/alsarawportlist.c"
@@ -107,4 +116,21 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_3_clicked()
 {
   //  print_midi_ports();
+}
+
+void MainWindow::on_listPortsBTN_clicked()
+{
+
+}
+
+void MainWindow::on_virtInBTN_clicked()
+{
+      //  if ( chooseMidiPort( midiin ) == false ) goto cleanup;
+
+        midiin->openVirtualPort();
+    midiin->setCallback( &mycallback );
+        midiin->ignoreTypes( false, false, false );
+//cleanup:
+
+// delete midiin;
 }

@@ -20,6 +20,10 @@ private slots:
     void on_pushButton_clicked();
     void on_pushButton_3_clicked();
 
+    void on_listPortsBTN_clicked();
+
+    void on_virtInBTN_clicked();
+
 private:
     Ui::MainWindow *ui;
     RtMidiIn  *midiin = 0;

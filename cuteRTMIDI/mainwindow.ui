@@ -43,7 +43,7 @@
      <string>send /dev/midi test</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="listPorts">
+   <widget class="QPushButton" name="listPortsBTN">
     <property name="geometry">
      <rect>
       <x>140</x>
@@ -86,7 +86,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Open Virtual IN</string>
+     <string>Open Virtual OUT</string>
     </property>
    </widget>
    <widget class="QPushButton" name="virtInBTN">
