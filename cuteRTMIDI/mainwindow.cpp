@@ -24,6 +24,8 @@
   #define SLEEP( milliseconds ) usleep( (unsigned long) (milliseconds * 1000.0) )
 #endif
 
+
+
 bool done;
 static void finish( int /*ignore*/ ){ done = true; }
 
@@ -35,6 +37,13 @@ void mycallback( double deltatime, std::vector< unsigned char > *message, void *
     std::cout << "Byte " << i << " = " << (int)message->at(i) << ", ";
   if ( nBytes > 0 )
     std::cout << "stamp = " << deltatime << std::endl;
+
+  std::vector<unsigned char> message2;
+message2[0] = 144;
+message2[1] = 64;
+message2[2] = 90;
+midiout->sendMessage( &message2 );
+
 }
 
 
@@ -94,6 +103,7 @@ MainWindow::MainWindow(QWidget *parent)
   } catch ( RtMidiError &error ) {
     error.printMessage();
   }
+
 midiin->closePort();
 midiout->closePort();
 
@@ -117,11 +127,14 @@ void MainWindow::on_pushButton_clicked()
 
 }
 
-//#include "src/alsarawportlist.c"
-//extern void print_midi_ports(void);
+
 void MainWindow::on_pushButton_3_clicked()
 {
-  //  print_midi_ports();
+      std::vector<unsigned char> message;
+    message[0] = 144;
+    message[1] = 64;
+    message[2] = 90;
+    midiout->sendMessage( &message );
 }
 
 void MainWindow::on_listPortsBTN_clicked()
