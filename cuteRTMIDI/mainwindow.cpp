@@ -96,6 +96,12 @@ MainWindow::MainWindow(QWidget *parent)
   }
 midiin->closePort();
 midiout->closePort();
+
+midiout->openVirtualPort();
+
+midiin->openVirtualPort();
+midiin->setCallback( &mycallback );
+midiin->ignoreTypes( false, false, false );
 }
 
 MainWindow::~MainWindow()
@@ -127,9 +133,7 @@ void MainWindow::on_virtInBTN_clicked()
 {
       //  if ( chooseMidiPort( midiin ) == false ) goto cleanup;
 
-        midiin->openVirtualPort();
-    midiin->setCallback( &mycallback );
-        midiin->ignoreTypes( false, false, false );
+
 //cleanup:
 
 // delete midiin;
