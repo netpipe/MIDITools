@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>190</y>
+      <y>390</y>
       <width>91</width>
       <height>27</height>
      </rect>
@@ -28,11 +28,14 @@
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>200</y>
-      <width>91</width>
+      <x>450</x>
+      <y>510</y>
+      <width>211</width>
       <height>27</height>
      </rect>
     </property>
@@ -40,11 +43,11 @@
      <string>send /dev/midi test</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="listPorts">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>350</y>
+      <x>140</x>
+      <y>20</y>
       <width>91</width>
       <height>27</height>
      </rect>
@@ -53,14 +56,50 @@
      <string>listports</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="inoutcmb">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>350</y>
-      <width>86</width>
+      <x>240</x>
+      <y>20</y>
+      <width>381</width>
       <height>27</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>50</y>
+      <width>561</width>
+      <height>271</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="virtOutBTN">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>450</y>
+      <width>171</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Open Virtual IN</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="virtInBTN">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>490</y>
+      <width>161</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Open Virtual IN</string>
     </property>
    </widget>
   </widget>

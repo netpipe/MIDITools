@@ -61,6 +61,7 @@ MainWindow::MainWindow(QWidget *parent)
     for ( unsigned i=0; i<nPorts; i++ ) {
       std::string portName = midiin->getPortName(i);
       std::cout << "  Input Port #" << i << ": " << portName << '\n';
+        ui->inoutcmb->addItem( portName.c_str() );
     }
 
     // RtMidiOut constructor ... exception possible
@@ -75,6 +76,7 @@ MainWindow::MainWindow(QWidget *parent)
     for ( unsigned i=0; i<nPorts; i++ ) {
       std::string portName = midiout->getPortName(i);
       std::cout << "  Output Port #" << i << ": " << portName << std::endl;
+      ui->inoutcmb->addItem( portName.c_str() );
     }
     std::cout << std::endl;
 
