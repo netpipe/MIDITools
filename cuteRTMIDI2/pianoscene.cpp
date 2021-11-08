@@ -396,11 +396,11 @@ bool PianoScene::event(QEvent *event)
                         break;
                     }
                 default:
-                    //qDebug() << "TouchPoint state: " << touchPoint.state();
+                    qDebug() << "TouchPoint state: " << touchPoint.state();
                     break;
                 }
             }
-            //qDebug() << "accepted event: " << event;
+            qDebug() << "accepted event: " << event;
             event->accept();
             return true;
         }
@@ -409,8 +409,8 @@ bool PianoScene::event(QEvent *event)
     default:
         break;
     }
-    //qDebug() << "unprocessed event: " << event;
-    return QGraphicsScene::event(event);
+    qDebug() << "unprocessed event: " << event;
+    ///return QGraphicsScene::event(event);
 }
 
 void PianoScene::allKeysOff()
