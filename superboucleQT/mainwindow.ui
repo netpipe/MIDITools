@@ -1,0 +1,3044 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1390</width>
+    <height>1058</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>10</y>
+      <width>1179</width>
+      <height>1011</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>drum sequencer</string>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_111">
+     <item row="0" column="4">
+      <widget class="QGroupBox" name="groupBox_6">
+       <property name="title">
+        <string>5</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_7">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_5">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_5">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_5">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QGroupBox" name="groupBox_65">
+       <property name="title">
+        <string>2</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_86">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_84">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_84">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_84">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_84">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="0" column="5">
+      <widget class="QGroupBox" name="groupBox_7">
+       <property name="title">
+        <string>6</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_8">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_6">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_6">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_6">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_6">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QGroupBox" name="groupBox_25">
+       <property name="title">
+        <string>4</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_47">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_44">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_44">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_44">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_44">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="1" column="8">
+      <widget class="QGroupBox" name="groupBox_20">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_42">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_39">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_39">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_39">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_39">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="4" column="8">
+      <widget class="QGroupBox" name="groupBox_59">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_80">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_78">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_78">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_78">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_78">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="4" column="7">
+      <widget class="QGroupBox" name="groupBox_72">
+       <property name="title">
+        <string>8</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_93">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_91">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_91">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_91">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_91">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QGroupBox" name="groupBox_40">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_62">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_59">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_59">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_59">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_59">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="3" column="8">
+      <widget class="QGroupBox" name="groupBox_31">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_53">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_50">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_50">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_50">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_50">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="2" column="4">
+      <widget class="QGroupBox" name="groupBox_27">
+       <property name="title">
+        <string>5</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_49">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_46">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_46">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_46">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_46">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QGroupBox" name="groupBox_88">
+       <property name="title">
+        <string>2</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_109">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_107">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_107">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_107">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_107">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QGroupBox" name="groupBox_62">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_83">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_81">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_81">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_81">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_81">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="6" column="3">
+      <widget class="QGroupBox" name="groupBox_79">
+       <property name="title">
+        <string>4</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_100">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_98">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_98">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_98">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_98">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="1" column="7">
+      <widget class="QGroupBox" name="groupBox_26">
+       <property name="title">
+        <string>8</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_48">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_45">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_45">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_45">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_45">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QGroupBox" name="groupBox_24">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_46">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_43">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_43">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_43">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_43">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="7" column="7">
+      <widget class="QGroupBox" name="groupBox_66">
+       <property name="title">
+        <string>8</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_87">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_85">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_85">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_85">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_85">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="2" column="7">
+      <widget class="QGroupBox" name="groupBox_28">
+       <property name="title">
+        <string>8</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_50">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_47">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_47">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_47">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_47">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QGroupBox" name="groupBox_5">
+       <property name="title">
+        <string>4</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_4">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_4">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_4">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QGroupBox" name="groupBox_51">
+       <property name="title">
+        <string>3</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_72">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_70">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_70">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_70">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_70">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="8" column="8">
+      <widget class="QGroupBox" name="groupBox_81">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_102">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_100">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_100">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_100">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_100">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="8" column="2">
+      <widget class="QGroupBox" name="groupBox_89">
+       <property name="title">
+        <string>3</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_110">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_108">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_108">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_108">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_108">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QGroupBox" name="groupBox_76">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_97">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_95">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_95">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_95">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_95">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="0" column="6">
+      <widget class="QGroupBox" name="groupBox_8">
+       <property name="title">
+        <string>7</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_9">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_7">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_7">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_7">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_7">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="7" column="5">
+      <widget class="QGroupBox" name="groupBox_69">
+       <property name="title">
+        <string>6</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_90">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_88">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_88">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_88">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_88">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QGroupBox" name="groupBox_74">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_95">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_93">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_93">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_93">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_93">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QGroupBox" name="groupBox_33">
+       <property name="title">
+        <string>2</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_55">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_52">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_52">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_52">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_52">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="8" column="4">
+      <widget class="QGroupBox" name="groupBox_83">
+       <property name="title">
+        <string>5</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_104">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_102">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_102">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_102">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_102">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QGroupBox" name="groupBox_58">
+       <property name="title">
+        <string>2</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_79">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_77">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_77">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_77">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_77">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QGroupBox" name="groupBox_67">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_88">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_86">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_86">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_86">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_86">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="6" column="7">
+      <widget class="QGroupBox" name="groupBox_60">
+       <property name="title">
+        <string>8</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_81">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_79">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_79">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_79">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_79">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="5" column="6">
+      <widget class="QGroupBox" name="groupBox_70">
+       <property name="title">
+        <string>7</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_91">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_89">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_89">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_89">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_89">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QGroupBox" name="groupBox_29">
+       <property name="title">
+        <string>3</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_51">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_48">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_48">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_48">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_48">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="0" column="7">
+      <widget class="QGroupBox" name="groupBox_9">
+       <property name="title">
+        <string>8</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_17">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_15">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_15">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_15">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_15">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="8" column="6">
+      <widget class="QGroupBox" name="groupBox_87">
+       <property name="title">
+        <string>7</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_108">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_106">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_106">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_106">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_106">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="7" column="2">
+      <widget class="QGroupBox" name="groupBox_64">
+       <property name="title">
+        <string>3</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_85">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_83">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_83">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_83">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_83">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QGroupBox" name="groupBox_4">
+       <property name="title">
+        <string>3</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_3">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_3">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_3">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QGroupBox" name="groupBox_43">
+       <property name="title">
+        <string>4</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_65">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_62">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_62">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_62">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_62">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="title">
+        <string>2</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_2">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_2">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_2">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QGroupBox" name="groupBox_21">
+       <property name="title">
+        <string>3</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_43">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_40">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_40">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_40">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_40">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="5" column="8">
+      <widget class="QGroupBox" name="groupBox_49">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_70">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_68">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_68">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_68">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_68">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="2" column="6">
+      <widget class="QGroupBox" name="groupBox_38">
+       <property name="title">
+        <string>7</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_60">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_57">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_57">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_57">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_57">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="1" column="5">
+      <widget class="QGroupBox" name="groupBox_19">
+       <property name="title">
+        <string>6</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_41">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_38">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_38">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_38">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_38">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="2" column="8">
+      <widget class="QGroupBox" name="groupBox_36">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_58">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_55">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_55">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_55">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_55">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="7" column="6">
+      <widget class="QGroupBox" name="groupBox_53">
+       <property name="title">
+        <string>7</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_74">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_72">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_72">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_72">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_72">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="5" column="3">
+      <widget class="QGroupBox" name="groupBox_57">
+       <property name="title">
+        <string>4</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_78">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_76">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_76">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_76">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_76">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QGroupBox" name="groupBox_39">
+       <property name="title">
+        <string>4</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_61">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_58">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_58">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_58">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_58">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QGroupBox" name="groupBox_52">
+       <property name="title">
+        <string>2</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_73">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_71">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_71">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_71">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_71">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="4" column="6">
+      <widget class="QGroupBox" name="groupBox_45">
+       <property name="title">
+        <string>7</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_19">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_64">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_64">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_64">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_64">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="3" column="5">
+      <widget class="QGroupBox" name="groupBox_44">
+       <property name="title">
+        <string>6</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_66">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_63">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_63">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_63">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_63">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="3" column="7">
+      <widget class="QGroupBox" name="groupBox_30">
+       <property name="title">
+        <string>8</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_52">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_49">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_49">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_49">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_49">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QGroupBox" name="groupBox_23">
+       <property name="title">
+        <string>2</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_45">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_42">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_42">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_42">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_42">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="4" column="5">
+      <widget class="QGroupBox" name="groupBox_48">
+       <property name="title">
+        <string>6</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_69">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_67">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_67">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_67">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_67">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="5" column="7">
+      <widget class="QGroupBox" name="groupBox_54">
+       <property name="title">
+        <string>8</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_75">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_73">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_73">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_73">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_73">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="3" column="6">
+      <widget class="QGroupBox" name="groupBox_34">
+       <property name="title">
+        <string>7</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_56">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_53">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_53">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_53">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_53">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="3" column="4">
+      <widget class="QGroupBox" name="groupBox_37">
+       <property name="title">
+        <string>5</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_59">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_56">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_56">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_56">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_56">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="1" column="6">
+      <widget class="QGroupBox" name="groupBox_18">
+       <property name="title">
+        <string>7</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_40">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_37">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_37">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_37">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_37">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="8" column="7">
+      <widget class="QGroupBox" name="groupBox_86">
+       <property name="title">
+        <string>8</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_107">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_105">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_105">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_105">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_105">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="4" column="4">
+      <widget class="QGroupBox" name="groupBox_56">
+       <property name="title">
+        <string>5</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_77">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_75">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_75">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_75">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_75">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="5" column="4">
+      <widget class="QGroupBox" name="groupBox_73">
+       <property name="title">
+        <string>5</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_94">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_92">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_92">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_92">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_92">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QGroupBox" name="groupBox_22">
+       <property name="title">
+        <string>5</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_44">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_41">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_41">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_41">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_41">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="6" column="4">
+      <widget class="QGroupBox" name="groupBox_63">
+       <property name="title">
+        <string>5</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_84">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_82">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_82">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_82">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_82">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="2" column="5">
+      <widget class="QGroupBox" name="groupBox_42">
+       <property name="title">
+        <string>6</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_64">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_61">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_61">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_61">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_61">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="6" column="2">
+      <widget class="QGroupBox" name="groupBox_50">
+       <property name="title">
+        <string>3</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_71">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_69">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_69">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_69">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_69">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QGroupBox" name="groupBox_32">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_54">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_51">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_51">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_51">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_51">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QGroupBox" name="groupBox_61">
+       <property name="title">
+        <string>2</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_82">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_80">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_80">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_80">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_80">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="5" column="5">
+      <widget class="QGroupBox" name="groupBox_46">
+       <property name="title">
+        <string>6</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_67">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_65">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_65">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_65">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_65">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="4" column="3">
+      <widget class="QGroupBox" name="groupBox_80">
+       <property name="title">
+        <string>4</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_101">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_99">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_99">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_99">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_99">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="6" column="6">
+      <widget class="QGroupBox" name="groupBox_47">
+       <property name="title">
+        <string>7</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_68">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_66">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_66">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_66">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_66">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="6" column="5">
+      <widget class="QGroupBox" name="groupBox_75">
+       <property name="title">
+        <string>6</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_96">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_94">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_94">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_94">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_94">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QGroupBox" name="groupBox_41">
+       <property name="title">
+        <string>3</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_63">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_60">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_60">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_60">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_60">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="8" column="5">
+      <widget class="QGroupBox" name="groupBox_82">
+       <property name="title">
+        <string>6</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_103">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_101">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_101">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_101">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_101">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="7" column="3">
+      <widget class="QGroupBox" name="groupBox_68">
+       <property name="title">
+        <string>4</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_89">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_87">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_87">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_87">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_87">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="5" column="2">
+      <widget class="QGroupBox" name="groupBox_78">
+       <property name="title">
+        <string>3</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_99">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_97">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_97">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_97">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_97">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="7" column="8">
+      <widget class="QGroupBox" name="groupBox_77">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_98">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_96">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_96">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_96">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_96">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QGroupBox" name="groupBox_84">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_105">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_103">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_103">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_103">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_103">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="0" column="8">
+      <widget class="QGroupBox" name="groupBox_17">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_18">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_16">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_16">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_16">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_16">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="6" column="8">
+      <widget class="QGroupBox" name="groupBox_55">
+       <property name="title">
+        <string>1</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_76">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_74">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_74">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_74">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_74">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="7" column="4">
+      <widget class="QGroupBox" name="groupBox_71">
+       <property name="title">
+        <string>5</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_92">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_90">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_90">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_90">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_90">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QGroupBox" name="groupBox_35">
+       <property name="title">
+        <string>2</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_57">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_54">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_54">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_54">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_54">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="8" column="3">
+      <widget class="QGroupBox" name="groupBox_85">
+       <property name="title">
+        <string>4</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_106">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="startstopbtn_104">
+          <property name="text">
+           <string>Start/Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="editbtn_104">
+          <property name="text">
+           <string>Edit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QSlider" name="volumeslide_104">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressbar_104">
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1390</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
