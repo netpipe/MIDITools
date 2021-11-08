@@ -1,0 +1,203 @@
+Determining if the Q_WS_WIN exist failed with the following output:
+Change Dir: /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3241375699/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3241375699.dir/build.make CMakeFiles/cmTryCompileExec3241375699.dir/build
+make[1]: Entering directory `/home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3241375699.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec3241375699.dir/CheckSymbolExists.cxx.o -c /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_WIN’ was not declared in this scope
+make[1]: *** [CMakeFiles/cmTryCompileExec3241375699.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory `/home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3241375699/fast] Error 2
+
+File /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_WIN
+  return ((int*)(&Q_WS_WIN))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_QWS exist failed with the following output:
+Change Dir: /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3497842058/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3497842058.dir/build.make CMakeFiles/cmTryCompileExec3497842058.dir/build
+make[1]: Entering directory `/home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3497842058.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec3497842058.dir/CheckSymbolExists.cxx.o -c /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_QWS’ was not declared in this scope
+make[1]: *** [CMakeFiles/cmTryCompileExec3497842058.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory `/home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3497842058/fast] Error 2
+
+File /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_QWS
+  return ((int*)(&Q_WS_QWS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_MAC exist failed with the following output:
+Change Dir: /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2998989501/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2998989501.dir/build.make CMakeFiles/cmTryCompileExec2998989501.dir/build
+make[1]: Entering directory `/home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2998989501.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec2998989501.dir/CheckSymbolExists.cxx.o -c /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_MAC’ was not declared in this scope
+make[1]: *** [CMakeFiles/cmTryCompileExec2998989501.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory `/home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec2998989501/fast] Error 2
+
+File /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_MAC
+  return ((int*)(&Q_WS_MAC))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec799257015/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec799257015.dir/build.make CMakeFiles/cmTryCompileExec799257015.dir/build
+make[1]: Entering directory `/home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec799257015.dir/CheckSymbolExists.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec799257015.dir/CheckSymbolExists.c.o   -c /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec799257015
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec799257015.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec799257015.dir/CheckSymbolExists.c.o  -o cmTryCompileExec799257015 -rdynamic 
+CMakeFiles/cmTryCompileExec799257015.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec799257015] Error 1
+make[1]: Leaving directory `/home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec799257015/fast] Error 2
+
+File /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec810699351/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec810699351.dir/build.make CMakeFiles/cmTryCompileExec810699351.dir/build
+make[1]: Entering directory `/home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec810699351.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec810699351.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec810699351
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec810699351.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec810699351.dir/CheckFunctionExists.c.o  -o cmTryCompileExec810699351 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec810699351] Error 1
+make[1]: Leaving directory `/home/clayton/Desktop/vmpk-0.5.1/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec810699351/fast] Error 2
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /run/media/netpipe/df7f53ef-2a98-4562-a498-7da578dab660/Programs/Media/Recording-Creating/MIDI/keyboards/vmpk-0.5.1/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_1cb16/fast && /usr/bin/gmake -f CMakeFiles/cmTC_1cb16.dir/build.make CMakeFiles/cmTC_1cb16.dir/build
+gmake[1]: Entering directory '/run/media/netpipe/df7f53ef-2a98-4562-a498-7da578dab660/Programs/Media/Recording-Creating/MIDI/keyboards/vmpk-0.5.1/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1cb16.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_1cb16.dir/src.c.o   -c /run/media/netpipe/df7f53ef-2a98-4562-a498-7da578dab660/Programs/Media/Recording-Creating/MIDI/keyboards/vmpk-0.5.1/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_1cb16
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1cb16.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_1cb16.dir/src.c.o  -o cmTC_1cb16 
+/usr/lib64/gcc/x86_64-suse-linux/7/../../../../x86_64-suse-linux/bin/ld: CMakeFiles/cmTC_1cb16.dir/src.c.o: in function `main':
+src.c:(.text+0x2d): undefined reference to `pthread_create'
+/usr/lib64/gcc/x86_64-suse-linux/7/../../../../x86_64-suse-linux/bin/ld: src.c:(.text+0x39): undefined reference to `pthread_detach'
+/usr/lib64/gcc/x86_64-suse-linux/7/../../../../x86_64-suse-linux/bin/ld: src.c:(.text+0x45): undefined reference to `pthread_cancel'
+/usr/lib64/gcc/x86_64-suse-linux/7/../../../../x86_64-suse-linux/bin/ld: src.c:(.text+0x56): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_1cb16.dir/build.make:104: cmTC_1cb16] Error 1
+gmake[1]: Leaving directory '/run/media/netpipe/df7f53ef-2a98-4562-a498-7da578dab660/Programs/Media/Recording-Creating/MIDI/keyboards/vmpk-0.5.1/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:138: cmTC_1cb16/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /run/media/netpipe/df7f53ef-2a98-4562-a498-7da578dab660/Programs/Media/Recording-Creating/MIDI/keyboards/vmpk-0.5.1/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_9e109/fast && /usr/bin/gmake -f CMakeFiles/cmTC_9e109.dir/build.make CMakeFiles/cmTC_9e109.dir/build
+gmake[1]: Entering directory '/run/media/netpipe/df7f53ef-2a98-4562-a498-7da578dab660/Programs/Media/Recording-Creating/MIDI/keyboards/vmpk-0.5.1/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9e109.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_9e109.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_9e109
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e109.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_9e109.dir/CheckFunctionExists.c.o  -o cmTC_9e109  -lpthreads 
+/usr/lib64/gcc/x86_64-suse-linux/7/../../../../x86_64-suse-linux/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_9e109.dir/build.make:104: cmTC_9e109] Error 1
+gmake[1]: Leaving directory '/run/media/netpipe/df7f53ef-2a98-4562-a498-7da578dab660/Programs/Media/Recording-Creating/MIDI/keyboards/vmpk-0.5.1/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:138: cmTC_9e109/fast] Error 2
+
+
+
