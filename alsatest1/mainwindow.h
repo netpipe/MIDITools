@@ -16,6 +16,9 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+    bool loaded;
+    QString fileName;
+
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
@@ -294,6 +297,10 @@ private slots:
     void on_FBG2_valueChanged(int value);
 
     void on_FBG3_valueChanged(int value);
+
+    void on_saveBTN_clicked();
+
+    void on_cmbTheme_currentIndexChanged(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;

@@ -5,6 +5,9 @@
 #include "FX.cpp"
 #include "myAlsa.cpp"
 //#include "myJack.cpp"
+#include <QFile>
+#include <QDirIterator>
+#include <QDebug>
 
 QTimer *timer;
 bool useJack=true;
@@ -16,6 +19,43 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(updateVolume()));
+
+
+    QDirIterator it("./Resource/themes/", QStringList() << "*.qss", QDir::Files, QDirIterator::Subdirectories);
+    while (it.hasNext()){
+      //  QFileInfo fileInfo(f.fileName());
+        ui->cmbTheme->addItem(it.next().toLatin1());
+    }
+
+
+    QFile MyFile("themes.txt");
+    if(MyFile.exists()){
+        MyFile.open(QIODevice::ReadWrite);
+        QTextStream in (&MyFile);
+        QString line;
+        QStringList list;
+         //   QList<QString> nums;
+        QStringList nums;
+        QRegExp rx("[:]");
+        line = in.readLine();
+  QString stylesheet;
+        if (line.contains(":")) {
+            list = line.split(rx);
+                qDebug() << "theme" <<  list.at(1).toLatin1();
+                stylesheet =  list.at(1).toLatin1();
+
+                MyFile.close();
+        }
+
+  fileName=stylesheet;
+        QFile file(stylesheet);
+        file.open(QIODevice::Text | QIODevice::ReadOnly);
+        QString styleSheet = QLatin1String(file.readAll());
+
+        qApp->setStyleSheet(styleSheet);
+
+    }
+  loaded=true;
 
 }
 
@@ -1833,4 +1873,57 @@ void MainWindow::on_FBG3_valueChanged(int value)
     mutex.lock();
     g3=(f/100.0f);
     mutex.unlock();
+}
+
+void MainWindow::on_saveBTN_clicked()
+{
+    QFile file("test.txt");
+    file.open(QIODevice::Text | QIODevice::ReadOnly);
+QFile file2("themes.txt");
+    if(file2.open(QIODevice::ReadWrite | QIODevice::Text))// QIODevice::Append |
+    {
+            QTextStream stream(&file2);
+            file2.seek(0);
+           stream << "theme:" << endl;
+            for (int i = 0; i < 1; i++)
+            {
+             stream << "theme:" << endl;
+            }
+        //                file.write("\n");
+           file2.close();
+    }
+}
+
+void MainWindow::on_cmbTheme_currentIndexChanged(const QString &arg1)
+{
+    if (loaded==true)
+    {
+    fileName=ui->cmbTheme->currentText();
+    QFile file(fileName);
+
+ //   qDebug("testing");
+
+    file.open(QIODevice::Text | QIODevice::ReadOnly);
+    QString styleSheet = QLatin1String(file.readAll());
+    qApp->setStyleSheet(styleSheet);
+    file.close();
+
+    QFile file2("themes.txt");
+        if(file2.open(QIODevice::ReadWrite | QIODevice::Text))// QIODevice::Append |
+        {
+                QTextStream stream(&file2);
+                file2.seek(0);
+                stream << "theme:" << ui->cmbTheme->currentText().toLatin1()<< endl;
+                for (int i = 0; i < ui->cmbTheme->count(); i++)
+                {
+                 stream << "theme:" << ui->cmbTheme->itemText(i) << endl;
+                }
+            //                file.write("\n");
+               file2.close();
+        }
+
+    if (ui->cmbTheme->currentText().toLatin1() != ""){
+      //   ui->cmbTheme->currentText().toLatin1();
+    }
+}
 }
