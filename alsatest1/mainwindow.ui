@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>877</width>
-    <height>484</height>
+    <height>424</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>760</x>
-      <y>320</y>
+      <x>670</x>
+      <y>310</y>
       <width>97</width>
       <height>41</height>
      </rect>
@@ -30,10 +30,10 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>760</x>
-      <y>380</y>
-      <width>97</width>
-      <height>31</height>
+      <x>770</x>
+      <y>310</y>
+      <width>91</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -94,7 +94,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>9</number>
     </property>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -2967,140 +2967,113 @@
        <string>16000Hz</string>
       </property>
      </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>10</y>
+        <width>271</width>
+        <height>229</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Noise Filter</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_30">
+         <property name="text">
+          <string>Input Volume</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QSlider" name="verticalSlider_2">
+         <property name="maximum">
+          <number>32768</number>
+         </property>
+         <property name="pageStep">
+          <number>50</number>
+         </property>
+         <property name="value">
+          <number>15000</number>
+         </property>
+         <property name="sliderPosition">
+          <number>15000</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QProgressBar" name="VolumeProgr_2">
+         <property name="maximum">
+          <number>40000</number>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="textVisible">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>Output Volume</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QSlider" name="verticalSlider">
+         <property name="maximum">
+          <number>32768</number>
+         </property>
+         <property name="pageStep">
+          <number>50</number>
+         </property>
+         <property name="value">
+          <number>15000</number>
+         </property>
+         <property name="sliderPosition">
+          <number>15000</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QProgressBar" name="VolumeProgr">
+         <property name="maximum">
+          <number>40000</number>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="textVisible">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QCheckBox" name="checkBox_6">
+         <property name="text">
+          <string>Noise Filter</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
-   </widget>
-   <widget class="QSlider" name="verticalSlider">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>330</y>
-      <width>211</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="maximum">
-     <number>32768</number>
-    </property>
-    <property name="pageStep">
-     <number>50</number>
-    </property>
-    <property name="value">
-     <number>15000</number>
-    </property>
-    <property name="sliderPosition">
-     <number>15000</number>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_15">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>320</y>
-      <width>111</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Output Volume</string>
-    </property>
-   </widget>
-   <widget class="QProgressBar" name="VolumeProgr">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>360</y>
-      <width>261</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="maximum">
-     <number>40000</number>
-    </property>
-    <property name="value">
-     <number>0</number>
-    </property>
-    <property name="textVisible">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QProgressBar" name="VolumeProgr_2">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>360</y>
-      <width>261</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="maximum">
-     <number>40000</number>
-    </property>
-    <property name="value">
-     <number>0</number>
-    </property>
-    <property name="textVisible">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_30">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>320</y>
-      <width>111</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Input Volume</string>
-    </property>
-   </widget>
-   <widget class="QSlider" name="verticalSlider_2">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>330</y>
-      <width>211</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="maximum">
-     <number>32768</number>
-    </property>
-    <property name="pageStep">
-     <number>50</number>
-    </property>
-    <property name="value">
-     <number>15000</number>
-    </property>
-    <property name="sliderPosition">
-     <number>15000</number>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="checkBox_6">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>330</y>
-      <width>111</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Noise Filter</string>
-    </property>
    </widget>
    <widget class="QPushButton" name="saveBTN">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>390</y>
+      <x>570</x>
+      <y>320</y>
       <width>91</width>
       <height>27</height>
      </rect>
@@ -3112,8 +3085,8 @@
    <widget class="QLineEdit" name="savePreset">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>390</y>
+      <x>460</x>
+      <y>320</y>
       <width>113</width>
       <height>27</height>
      </rect>
@@ -3122,8 +3095,8 @@
    <widget class="QComboBox" name="SelectPresetCMB">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>390</y>
+      <x>150</x>
+      <y>320</y>
       <width>221</width>
       <height>27</height>
      </rect>
@@ -3132,8 +3105,8 @@
    <widget class="QPushButton" name="LoadBTN">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>390</y>
+      <x>370</x>
+      <y>320</y>
       <width>91</width>
       <height>27</height>
      </rect>
@@ -3145,9 +3118,9 @@
    <widget class="QComboBox" name="cmbTheme">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>360</y>
-      <width>86</width>
+      <x>10</x>
+      <y>320</y>
+      <width>121</width>
       <height>27</height>
      </rect>
     </property>
