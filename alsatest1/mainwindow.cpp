@@ -1884,106 +1884,106 @@ QFile file2("settings.txt");
             QTextStream stream(&file2);
        //     file2.seek(0);
 
-               stream <<  ui->CompAttLE->text().toLatin1()<< endl;
-               stream <<  ui->CompGateThLE->text().toLatin1()<< endl;
-               stream <<  ui->CompRelLE->text().toLatin1()<< endl;
-               stream <<  ui->CompGateFLE->text().toLatin1()<< endl;
-               stream <<  ui->CompLimThLE->text().toLatin1()<< endl;
-               stream <<  ui->CompCompFLE->text().toLatin1()<< endl;
-               stream <<  ui->CompLimFLE->text().toLatin1()<< endl;
-               stream <<  ui->checkBox_3->isChecked()<< endl;
+               stream << "CompAttLE:" << ui->CompAttLE->text().toLatin1()<< endl;
+               stream << "CompGateThLE:" << ui->CompGateThLE->text().toLatin1()<< endl;
+               stream << "CompRelLE:" << ui->CompRelLE->text().toLatin1()<< endl;
+               stream << "CompGateFLE:" << ui->CompGateFLE->text().toLatin1()<< endl;
+               stream << "CompLimThLE:" << ui->CompLimThLE->text().toLatin1()<< endl;
+               stream << "CompCompFLE:" << ui->CompCompFLE->text().toLatin1()<< endl;
+               stream << "CompLimFLE:" << ui->CompLimFLE->text().toLatin1()<< endl;
+               stream << "checkBox_3:" << ui->checkBox_3->isChecked()<< endl;
                ////////////
-               stream <<  ui->DGainLN->text().toLatin1() << endl;
-               stream <<  ui->DClipLN->text().toLatin1()<< endl;
-               stream <<  ui->DCFactLN->text().toLatin1()<< endl;
-               stream <<  ui->checkBox_10->text().toLatin1()<< endl;
-               stream <<  ui->checkBox->isChecked()<< endl;
+               stream << "DGainLN:" << ui->DGainLN->text().toLatin1() << endl;
+               stream << "DClipLN:" << ui->DClipLN->text().toLatin1()<< endl;
+               stream << "DCFactLN:" << ui->DCFactLN->text().toLatin1()<< endl;
+               stream << "checkBox_10:" << ui->checkBox_10->text().toLatin1()<< endl;
+               stream << "checkBox:" << ui->checkBox->isChecked()<< endl;
                //////////////////////////////////////////////////////////
-               stream <<  ui->TDepthLN->text().toLatin1()<< endl;
-               stream <<  ui->TPeriodLN->text().toLatin1()<< endl;
-               stream <<  ui->Check_Tr->isChecked()<< endl;
+               stream << "TDepthLN:" << ui->TDepthLN->text().toLatin1()<< endl;
+               stream << "TPeriodLN:" << ui->TPeriodLN->text().toLatin1()<< endl;
+               stream << "Check_Tr:" << ui->Check_Tr->isChecked()<< endl;
                ////////////////////////////
-               stream <<  ui->ChSpeedLE->text().toLatin1()<< endl;
-               stream <<  ui->ChDepthLE->text().toLatin1()<< endl;
-               stream <<  ui->ChFeedbackLE->text().toLatin1()<< endl;
-               stream <<  ui->ChWetLE->text().toLatin1()<< endl;
-               stream <<  ui->ChDryLE->text().toLatin1()<< endl;
-               stream <<  ui->checkBox_4->isChecked()<< endl;
+               stream << "ChSpeedLE:" << ui->ChSpeedLE->text().toLatin1()<< endl;
+               stream << "ChDepthLE:" << ui->ChDepthLE->text().toLatin1()<< endl;
+               stream << "ChFeedbackLE:" << ui->ChFeedbackLE->text().toLatin1()<< endl;
+               stream <<  "ChWetLE:" <<ui->ChWetLE->text().toLatin1()<< endl;
+               stream << "ChDryLE:" << ui->ChDryLE->text().toLatin1()<< endl;
+               stream << "checkBox_4:" << ui->checkBox_4->isChecked()<< endl;
                ///////////////////////////////
-               stream <<  ui->WahBaseLE->text().toLatin1()<< endl;
-               stream <<  ui->WahDepthLE->text().toLatin1()<< endl;
-               stream <<  ui->WahRateLE->text().toLatin1()<< endl;
-               stream <<  ui->WahDryLE->text().toLatin1()<< endl;
-               stream <<  ui->WahWetLE->text().toLatin1()<< endl;
-               stream <<  ui->WahRLE->text().toLatin1()<< endl;
-               stream <<  ui->checkBox_2->isChecked()<< endl;
+               stream << "WahBaseLE:" << ui->WahBaseLE->text().toLatin1()<< endl;
+               stream << "WahDepthLE:" << ui->WahDepthLE->text().toLatin1()<< endl;
+               stream << "WahRateLE:" << ui->WahRateLE->text().toLatin1()<< endl;
+               stream << "WahDryLE:" << ui->WahDryLE->text().toLatin1()<< endl;
+               stream << "WahWetLE:" << ui->WahWetLE->text().toLatin1()<< endl;
+               stream << "WahRLE:" << ui->WahRLE->text().toLatin1()<< endl;
+               stream << "checkBox_2:" << ui->checkBox_2->isChecked()<< endl;
                ///////////////////////////////
-               stream <<  ui->VibSpeedLE->text().toLatin1()<< endl;
-               stream <<  ui->VibDepthLE->text().toLatin1()<< endl;
-               stream <<  ui->VibFeedBackLE->text().toLatin1()<< endl;
-               stream <<  ui->VibWetLE->text().toLatin1()<< endl;
-               stream <<  ui->VibDryLE->text().toLatin1()<< endl;
-               stream <<  ui->checkBox_7->isChecked()<< endl;
+               stream << "VibSpeedLE:" << ui->VibSpeedLE->text().toLatin1()<< endl;
+               stream << "VibDepthLE:" << ui->VibDepthLE->text().toLatin1()<< endl;
+               stream << "VibFeedBackLE:" << ui->VibFeedBackLE->text().toLatin1()<< endl;
+               stream << "VibWetLE:" << ui->VibWetLE->text().toLatin1()<< endl;
+               stream << "VibDryLE:" << ui->VibDryLE->text().toLatin1()<< endl;
+               stream << "checkBox_7:" << ui->checkBox_7->isChecked()<< endl;
                ///////////////////////////////
-               stream <<  ui->ShShiftLE->text().toLatin1()<< endl;
-               stream <<  ui->ShFeedbackLE->text().toLatin1()<< endl;
-               stream <<  ui->ShWetLE->text().toLatin1()<< endl;
-               stream <<  ui->ShDryLE->text().toLatin1()<< endl;
-               stream <<  ui->checkBox_8->isChecked()<< endl;
+               stream << "ShShiftLE:" << ui->ShShiftLE->text().toLatin1()<< endl;
+               stream << "ShFeedbackLE:" << ui->ShFeedbackLE->text().toLatin1()<< endl;
+               stream << "ShWetLE:" << ui->ShWetLE->text().toLatin1()<< endl;
+               stream << "ShDryLE:" << ui->ShDryLE->text().toLatin1()<< endl;
+               stream << "checkBox_8:" << ui->checkBox_8->isChecked()<< endl;
                ///////////////////////////////
-               stream <<  ui->PhBaseLE->text().toLatin1()<< endl;
-               stream <<  ui->PhDepthLE->text().toLatin1()<< endl;
-               stream <<  ui->PhRateLE->text().toLatin1()<< endl;
-               stream <<  ui->PhFeedBackLE->text().toLatin1()<< endl;
-               stream <<  ui->PhDryLE->text().toLatin1()<< endl;
-               stream <<  ui->PhWetLE->text().toLatin1()<< endl;
-               stream <<  ui->checkBox_5->isChecked()<< endl;
+               stream << "PhBaseLE:" << ui->PhBaseLE->text().toLatin1()<< endl;
+               stream << "PhDepthLE:" << ui->PhDepthLE->text().toLatin1()<< endl;
+               stream << "PhRateLE:" << ui->PhRateLE->text().toLatin1()<< endl;
+               stream << "PhFeedBackLE:" << ui->PhFeedBackLE->text().toLatin1()<< endl;
+               stream << "PhDryLE:" << ui->PhDryLE->text().toLatin1()<< endl;
+               stream << "PhWetLE:" << ui->PhWetLE->text().toLatin1()<< endl;
+               stream << "checkBox_5:" << ui->checkBox_5->isChecked()<< endl;
                ///////////////////////////////
 
-               stream <<  ui->Dtime_LE->text().toLatin1()<< endl;
-               stream <<  ui->DFeedBack_LE->text().toLatin1()<< endl;
-               stream <<  ui->DMix_LE->text().toLatin1()<< endl;
-               stream <<  ui->Check_D->isChecked()<< endl;
+               stream << "Dtime_LE:" << ui->Dtime_LE->text().toLatin1()<< endl;
+               stream << "DFeedBack_LE:" << ui->DFeedBack_LE->text().toLatin1()<< endl;
+               stream << "DMix_LE:" << ui->DMix_LE->text().toLatin1()<< endl;
+               stream << "Check_D:" << ui->Check_D->isChecked()<< endl;
 
                ///////////////////////////////
                //sliders
-               stream <<  ui->RVDSL1->value()<< endl;
-               stream <<  ui->RVDSL2->value()<< endl;
-               stream <<  ui->RVDSL3->value()<< endl;
-               stream <<  ui->RVDSL4->value()<< endl;
-               stream <<  ui->RVDSL5->value()<< endl;
-               stream <<  ui->RVDSL6->value()<< endl;
-               stream <<  ui->RVDSLFB1->value()<< endl;
-               stream <<  ui->RVDSLFB2->value()<< endl;
-               stream <<  ui->RVDSLFB3->value()<< endl;
-               stream <<  ui->FBthSL->value()<< endl;
-               stream <<  ui->FBfiSL->value()<< endl;
-               stream <<  ui->FBpsSL->value()<< endl;
+               stream << "RVDSL1:" << ui->RVDSL1->value()<< endl;
+               stream << "RVDSL2:" << ui->RVDSL2->value()<< endl;
+               stream << "RVDSL3:" << ui->RVDSL3->value()<< endl;
+               stream << "RVDSL4:" << ui->RVDSL4->value()<< endl;
+               stream << "RVDSL5:" << ui->RVDSL5->value()<< endl;
+               stream << "RVDSL6:" << ui->RVDSL6->value()<< endl;
+               stream << "RVDSLFB1:" << ui->RVDSLFB1->value()<< endl;
+               stream << "RVDSLFB2:" << ui->RVDSLFB2->value()<< endl;
+               stream << "RVDSLFB3:" << ui->RVDSLFB3->value()<< endl;
+               stream << "FBthSL:" << ui->FBthSL->value()<< endl;
+               stream << "FBfiSL:" << ui->FBfiSL->value()<< endl;
+               stream << "FBpsSL:" << ui->FBpsSL->value()<< endl;
 
-               stream <<  ui->fiSL1->value()<< endl;
-               stream <<  ui->fiSL2->value()<< endl;
-               stream <<  ui->fiSL3->value()<< endl;
-               stream <<  ui->fiSL4->value()<< endl;
-               stream <<  ui->fiSL5->value()<< endl;
-               stream <<  ui->fiSL6->value()<< endl;
+               stream << "fiSL1:" << ui->fiSL1->value()<< endl;
+               stream << "fiSL2:" << ui->fiSL2->value()<< endl;
+               stream << "fiSL3:" << ui->fiSL3->value()<< endl;
+               stream << "fiSL4:" << ui->fiSL4->value()<< endl;
+               stream << "fiSL5:" << ui->fiSL5->value()<< endl;
+               stream << "fiSL6:" << ui->fiSL6->value()<< endl;
 
-               stream <<  ui->FBG1->value()<< endl;
-               stream <<  ui-> FBG2->value()<< endl;
-               stream <<  ui->FBG3->value()<< endl;
-               stream <<  ui->checkBox_11->isChecked()<< endl;
+               stream << "FBG1:" << ui->FBG1->value()<< endl;
+               stream << "FBG2:" << ui-> FBG2->value()<< endl;
+               stream << "FBG3:" << ui->FBG3->value()<< endl;
+               stream << "checkBox_11:" << ui->checkBox_11->isChecked()<< endl;
                ///////////////////////////////
-               stream <<  ui->EQ63SL->value()<< endl;
-               stream <<  ui->EQ250SL->value()<< endl;
-               stream <<  ui->EQ1000SL->value()<< endl;
-               stream <<  ui->EQ4000SL->value()<< endl;
-               stream <<  ui->EQ8000SL->value()<< endl;
-               stream <<  ui->EQ212000SL->value()<< endl;
-               stream <<  ui->EQ16000SL->value()<< endl;
-               stream <<  ui->checkBox_9->isChecked()<< endl;
+               stream << "EQ63SL:" << ui->EQ63SL->value()<< endl;
+               stream << "EQ250SL:" << ui->EQ250SL->value()<< endl;
+               stream << "EQ1000SL:" << ui->EQ1000SL->value()<< endl;
+               stream << "EQ4000SL:" << ui->EQ4000SL->value()<< endl;
+               stream << "EQ8000SL:" << ui->EQ8000SL->value()<< endl;
+               stream << "EQ212000SL:" << ui->EQ212000SL->value()<< endl;
+               stream << "EQ16000SL:" << ui->EQ16000SL->value()<< endl;
+               stream << "checkBox_9:" << ui->checkBox_9->isChecked()<< endl;
                ////noise filter
-               stream <<  ui->verticalSlider_2->value()<< endl;
-               stream <<  ui->verticalSlider->value()<< endl;
-               stream <<  ui->checkBox_6->isChecked()<< endl;
+               stream << "verticalSlider_2:" << ui->verticalSlider_2->value()<< endl;
+               stream << "verticalSlider:" << ui->verticalSlider->value()<< endl;
+               stream << "checkBox_6:" << ui->checkBox_6->isChecked()<< endl;
 
         //                file.write("\n");
            file2.close();
@@ -2022,4 +2022,139 @@ void MainWindow::on_cmbTheme_currentIndexChanged(const QString &arg1)
       //   ui->cmbTheme->currentText().toLatin1();
     }
 }
+}
+
+void MainWindow::on_LoadBTN_clicked()
+{
+
+//    QDirIterator it("./presets/", QStringList() << "*.presets", QDir::Files, QDirIterator::Subdirectories);
+//    while (it.hasNext()){
+//      //  QFileInfo fileInfo(f.fileName());
+//        ui->cmbTheme->addItem(it.next().toLatin1());
+//    }
+
+    //https://stackoverflow.com/questions/31384273/how-to-search-for-a-string-in-a-text-file-using-qt
+        QString searchString(":");
+        QFile MyFile("settings.txt");
+        MyFile.open(QIODevice::ReadWrite);
+        QTextStream in (&MyFile);
+        QString line;
+      //  int ii=0;
+        QStringList list;
+         //   QList<QString> nums;
+        QStringList nums;
+
+
+        do {
+            line = in.readLine();
+            searchString=":";
+            if (line.contains(searchString)) { //, Qt::CaseSensitive
+                // do something
+                QRegExp rx("[:]");// match a comma or a space
+                list = line.split(rx);
+                nums.append(list.at(1).toLatin1());
+            }
+        } while (!line.isNull());
+
+
+            ui->CompAttLE->setText(nums.at(0));
+            ui->CompGateThLE->setText(nums.at(1));
+            ui->CompRelLE->setText(nums.at(2));
+            ui->CompGateFLE->setText(nums.at(3));
+            ui->CompLimThLE->setText(nums.at(4));
+            ui->CompCompFLE->setText(nums.at(5));
+            ui->CompLimFLE->setText(nums.at(6));
+            ui->checkBox_3->setChecked(nums.at(7).toInt());
+          ////////////
+            ui->DGainLN->setText(nums.at(8));
+            ui->DClipLN->setText(nums.at(9));
+            ui->DCFactLN->setText(nums.at(10));
+            ui->checkBox_10->setText(nums.at(11));
+            ui->checkBox->setChecked(nums.at(12).toInt());
+          //////////////////////////////////////////////////////////
+            ui->TDepthLN->setText(nums.at(12));
+            ui->TPeriodLN->setText(nums.at(14));
+            ui->Check_Tr->setChecked(nums.at(15).toInt());
+          ////////////////////////////
+            ui->ChSpeedLE->setText(nums.at(16));
+            ui->ChDepthLE->setText(nums.at(17));
+            ui->ChFeedbackLE->setText(nums.at(18));
+            ui->ChWetLE->setText(nums.at(19));
+            ui->ChDryLE->setText(nums.at(20));
+            ui->checkBox_4->setChecked(nums.at(21).toInt());
+          ///////////////////////////////
+            ui->WahBaseLE->setText(nums.at(22));
+            ui->WahDepthLE->setText(nums.at(23));
+            ui->WahRateLE->setText(nums.at(24));
+            ui->WahDryLE->setText(nums.at(25));
+            ui->WahWetLE->setText(nums.at(26));
+            ui->WahRLE->setText(nums.at(27));
+            ui->checkBox_2->setChecked(nums.at(28).toInt());
+          ///////////////////////////////
+            ui->VibSpeedLE->setText(nums.at(29));
+            ui->VibDepthLE->setText(nums.at(30));
+            ui->VibFeedBackLE->setText(nums.at(31));
+            ui->VibWetLE->setText(nums.at(32));
+            ui->VibDryLE->setText(nums.at(33));
+            ui->checkBox_7->setChecked(nums.at(34).toInt());
+          ///////////////////////////////
+            ui->ShShiftLE->setText(nums.at(35));
+            ui->ShFeedbackLE->setText(nums.at(36));
+            ui->ShWetLE->setText(nums.at(37));
+            ui->ShDryLE->setText(nums.at(38));
+            ui->checkBox_8->setChecked(nums.at(39).toInt());
+          ///////////////////////////////
+            ui->PhBaseLE->setText(nums.at(40));
+            ui->PhDepthLE->setText(nums.at(41));
+            ui->PhRateLE->setText(nums.at(42));
+            ui->PhFeedBackLE->setText(nums.at(43));
+            ui->PhDryLE->setText(nums.at(44));
+            ui->PhWetLE->setText(nums.at(45));
+            ui->checkBox_5->setChecked(nums.at(46).toInt());
+          ///////////////////////////////
+
+            ui->Dtime_LE->setText(nums.at(47));
+            ui->DFeedBack_LE->setText(nums.at(48));
+            ui->DMix_LE->setText(nums.at(49));
+     ui->Check_D->setChecked(nums.at(50).toInt());
+
+    ///////////////////////////////
+    //sliders
+    ui->RVDSL1->setValue(nums.at(51).toInt());
+            ui->RVDSL2->setValue(nums.at(52).toInt());
+            ui->RVDSL3->setValue(nums.at(53).toInt());
+            ui->RVDSL4->setValue(nums.at(54).toInt());
+            ui->RVDSL5->setValue(nums.at(55).toInt());
+            ui->RVDSL6->setValue(nums.at(56).toInt());
+            ui->RVDSLFB1->setValue(nums.at(57).toInt());
+            ui->RVDSLFB2->setValue(nums.at(58).toInt());
+            ui->RVDSLFB3->setValue(nums.at(59).toInt());
+            ui->FBthSL->setValue(nums.at(60).toInt());
+            ui->FBfiSL->setValue(nums.at(61).toInt());
+            ui->FBpsSL->setValue(nums.at(62).toInt());
+
+            ui->fiSL1->setValue(nums.at(63).toInt());
+            ui->fiSL2->setValue(nums.at(64).toInt());
+            ui->fiSL3->setValue(nums.at(65).toInt());
+            ui->fiSL4->setValue(nums.at(66).toInt());
+            ui->fiSL5->setValue(nums.at(67).toInt());
+            ui->fiSL6->setValue(nums.at(68).toInt());
+
+            ui->FBG1->setValue(nums.at(69).toInt());
+            ui-> FBG2->setValue(nums.at(70).toInt());
+            ui->FBG3->setValue(nums.at(71).toInt());
+             ui->checkBox_11->setChecked(nums.at(72).toInt());
+             ///////////////////////////////
+            ui->EQ63SL->setValue(nums.at(73).toInt());
+            ui->EQ250SL->setValue(nums.at(74).toInt());
+            ui->EQ1000SL->setValue(nums.at(75).toInt());
+            ui->EQ4000SL->setValue(nums.at(76).toInt());
+            ui->EQ8000SL->setValue(nums.at(77).toInt());
+            ui->EQ212000SL->setValue(nums.at(78).toInt());
+            ui->EQ16000SL->setValue(nums.at(79).toInt());
+            ui->checkBox_9->setChecked(nums.at(80).toInt());
+             ////noise filter
+            ui->verticalSlider_2->setValue(nums.at(81).toInt());
+            ui->verticalSlider->setValue(nums.at(82).toInt());
+            ui->checkBox_6->setChecked(nums.at(83).toInt());
 }

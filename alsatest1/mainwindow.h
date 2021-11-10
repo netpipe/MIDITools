@@ -302,6 +302,8 @@ private slots:
 
     void on_cmbTheme_currentIndexChanged(const QString &arg1);
 
+    void on_LoadBTN_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
