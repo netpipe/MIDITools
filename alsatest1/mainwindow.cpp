@@ -1877,18 +1877,114 @@ void MainWindow::on_FBG3_valueChanged(int value)
 
 void MainWindow::on_saveBTN_clicked()
 {
-    QFile file("test.txt");
-    file.open(QIODevice::Text | QIODevice::ReadOnly);
-QFile file2("themes.txt");
+
+QFile file2("settings.txt");
     if(file2.open(QIODevice::ReadWrite | QIODevice::Text))// QIODevice::Append |
     {
             QTextStream stream(&file2);
-            file2.seek(0);
-           stream << "theme:" << endl;
-            for (int i = 0; i < 1; i++)
-            {
-             stream << "theme:" << endl;
-            }
+       //     file2.seek(0);
+
+               stream <<  ui->CompAttLE->text().toLatin1()<< endl;
+               stream <<  ui->CompGateThLE->text().toLatin1()<< endl;
+               stream <<  ui->CompRelLE->text().toLatin1()<< endl;
+               stream <<  ui->CompGateFLE->text().toLatin1()<< endl;
+               stream <<  ui->CompLimThLE->text().toLatin1()<< endl;
+               stream <<  ui->CompCompFLE->text().toLatin1()<< endl;
+               stream <<  ui->CompLimFLE->text().toLatin1()<< endl;
+               stream <<  ui->checkBox_3->isChecked()<< endl;
+               ////////////
+               stream <<  ui->DGainLN->text().toLatin1() << endl;
+               stream <<  ui->DClipLN->text().toLatin1()<< endl;
+               stream <<  ui->DCFactLN->text().toLatin1()<< endl;
+               stream <<  ui->checkBox_10->text().toLatin1()<< endl;
+               stream <<  ui->checkBox->isChecked()<< endl;
+               //////////////////////////////////////////////////////////
+               stream <<  ui->TDepthLN->text().toLatin1()<< endl;
+               stream <<  ui->TPeriodLN->text().toLatin1()<< endl;
+               stream <<  ui->Check_Tr->isChecked()<< endl;
+               ////////////////////////////
+               stream <<  ui->ChSpeedLE->text().toLatin1()<< endl;
+               stream <<  ui->ChDepthLE->text().toLatin1()<< endl;
+               stream <<  ui->ChFeedbackLE->text().toLatin1()<< endl;
+               stream <<  ui->ChWetLE->text().toLatin1()<< endl;
+               stream <<  ui->ChDryLE->text().toLatin1()<< endl;
+               stream <<  ui->checkBox_4->isChecked()<< endl;
+               ///////////////////////////////
+               stream <<  ui->WahBaseLE->text().toLatin1()<< endl;
+               stream <<  ui->WahDepthLE->text().toLatin1()<< endl;
+               stream <<  ui->WahRateLE->text().toLatin1()<< endl;
+               stream <<  ui->WahDryLE->text().toLatin1()<< endl;
+               stream <<  ui->WahWetLE->text().toLatin1()<< endl;
+               stream <<  ui->WahRLE->text().toLatin1()<< endl;
+               stream <<  ui->checkBox_2->isChecked()<< endl;
+               ///////////////////////////////
+               stream <<  ui->VibSpeedLE->text().toLatin1()<< endl;
+               stream <<  ui->VibDepthLE->text().toLatin1()<< endl;
+               stream <<  ui->VibFeedBackLE->text().toLatin1()<< endl;
+               stream <<  ui->VibWetLE->text().toLatin1()<< endl;
+               stream <<  ui->VibDryLE->text().toLatin1()<< endl;
+               stream <<  ui->checkBox_7->isChecked()<< endl;
+               ///////////////////////////////
+               stream <<  ui->ShShiftLE->text().toLatin1()<< endl;
+               stream <<  ui->ShFeedbackLE->text().toLatin1()<< endl;
+               stream <<  ui->ShWetLE->text().toLatin1()<< endl;
+               stream <<  ui->ShDryLE->text().toLatin1()<< endl;
+               stream <<  ui->checkBox_8->isChecked()<< endl;
+               ///////////////////////////////
+               stream <<  ui->PhBaseLE->text().toLatin1()<< endl;
+               stream <<  ui->PhDepthLE->text().toLatin1()<< endl;
+               stream <<  ui->PhRateLE->text().toLatin1()<< endl;
+               stream <<  ui->PhFeedBackLE->text().toLatin1()<< endl;
+               stream <<  ui->PhDryLE->text().toLatin1()<< endl;
+               stream <<  ui->PhWetLE->text().toLatin1()<< endl;
+               stream <<  ui->checkBox_5->isChecked()<< endl;
+               ///////////////////////////////
+
+               stream <<  ui->Dtime_LE->text().toLatin1()<< endl;
+               stream <<  ui->DFeedBack_LE->text().toLatin1()<< endl;
+               stream <<  ui->DMix_LE->text().toLatin1()<< endl;
+               stream <<  ui->Check_D->isChecked()<< endl;
+
+               ///////////////////////////////
+               //sliders
+               stream <<  ui->RVDSL1->value()<< endl;
+               stream <<  ui->RVDSL2->value()<< endl;
+               stream <<  ui->RVDSL3->value()<< endl;
+               stream <<  ui->RVDSL4->value()<< endl;
+               stream <<  ui->RVDSL5->value()<< endl;
+               stream <<  ui->RVDSL6->value()<< endl;
+               stream <<  ui->RVDSLFB1->value()<< endl;
+               stream <<  ui->RVDSLFB2->value()<< endl;
+               stream <<  ui->RVDSLFB3->value()<< endl;
+               stream <<  ui->FBthSL->value()<< endl;
+               stream <<  ui->FBfiSL->value()<< endl;
+               stream <<  ui->FBpsSL->value()<< endl;
+
+               stream <<  ui->fiSL1->value()<< endl;
+               stream <<  ui->fiSL2->value()<< endl;
+               stream <<  ui->fiSL3->value()<< endl;
+               stream <<  ui->fiSL4->value()<< endl;
+               stream <<  ui->fiSL5->value()<< endl;
+               stream <<  ui->fiSL6->value()<< endl;
+
+               stream <<  ui->FBG1->value()<< endl;
+               stream <<  ui-> FBG2->value()<< endl;
+               stream <<  ui->FBG3->value()<< endl;
+               stream <<  ui->checkBox_11->isChecked()<< endl;
+               ///////////////////////////////
+               stream <<  ui->EQ63SL->value()<< endl;
+               stream <<  ui->EQ250SL->value()<< endl;
+               stream <<  ui->EQ1000SL->value()<< endl;
+               stream <<  ui->EQ4000SL->value()<< endl;
+               stream <<  ui->EQ8000SL->value()<< endl;
+               stream <<  ui->EQ212000SL->value()<< endl;
+               stream <<  ui->EQ16000SL->value()<< endl;
+               stream <<  ui->checkBox_9->isChecked()<< endl;
+               ////noise filter
+               stream <<  ui->verticalSlider_2->value()<< endl;
+               stream <<  ui->verticalSlider->value()<< endl;
+               stream <<  ui->checkBox_6->isChecked()<< endl;
+
         //                file.write("\n");
            file2.close();
     }
