@@ -116,6 +116,9 @@
     </property>
    </widget>
    <widget class="PianoKeybd" name="pianokeybd">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>30</x>
