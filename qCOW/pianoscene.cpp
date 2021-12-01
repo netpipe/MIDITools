@@ -456,7 +456,7 @@ bool PianoScene::event(QEvent *event)
         break;
     }
     qDebug() << "unprocessed event: " << event;
-    ///return QGraphicsScene::event(event);
+    return QGraphicsScene::event(event);
 }
 
 void PianoScene::allKeysOff()
