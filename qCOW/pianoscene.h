@@ -26,6 +26,41 @@
 
 #include <QGraphicsScene>
 #include <QHash>
+#include <QAudioOutput>
+#include <QScopedPointer>
+#include <QAudioDeviceInfo>
+#include <QAudioOutput>
+#include <QDebug>
+#include <qmath.h>
+#include <qendian.h>
+
+#include "fluidlite.h"
+
+class Generator : public QIODevice
+{
+    Q_OBJECT
+
+public:
+    Generator(const QAudioFormat &format, qint64 durationUs, int nKey);
+    ~Generator();
+
+    fluid_settings_t* settings;
+    fluid_synth_t* synth;
+
+    void start();
+    void stop();
+
+    qint64 readData(char *data, qint64 maxlen) override;
+    qint64 writeData(const char *data, qint64 len) override;
+    qint64 bytesAvailable() const override;
+
+private:
+    void generateData(const QAudioFormat &format, qint64 durationUs, int sampleRate);
+
+private:
+    qint64 m_pos = 0;
+    QByteArray m_buffer;
+};
 
 class PianoHandler
 {
@@ -151,6 +186,16 @@ private:
     QStringList m_names_f;
     PianoPalette* m_palette;
     PianoPalette* m_scalePalette;
+
+//Attributes
+public:
+    QScopedPointer<Generator> m_generator;
+    QScopedPointer<QAudioOutput> m_audioOutput;
+
+//Operators
+public:
+    void initializeAudio(const QAudioDeviceInfo &deviceInfo, int nKey);
+
 };
 
 #endif /*PIANOSCENE_H_*/

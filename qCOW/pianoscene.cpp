@@ -26,6 +26,8 @@
 #include <QKeyEvent>
 #include <QDebug>
 
+#include "pianokeybd.h"
+
 #define KEYWIDTH  18
 #define KEYHEIGHT 72
 
@@ -104,12 +106,17 @@ void PianoScene::showKeyOn( PianoKey* key, QColor color, int vel )
         key->setPressedBrush(hilightBrush);
     }
     key->setPressed(true);
+
+    PianoKeybd* lpKB = (PianoKeybd*)parent();
+    lpKB->resize(lpKB->width()+100, lpKB->height());
+    lpKB->resize(lpKB->width()-100, lpKB->height());
 }
 
 void PianoScene::showKeyOn( PianoKey* key, int vel )
 {
     if (vel >= 0) {
-        if (m_palette == 0 && m_keyPressedColor.isValid()) {
+        //if (m_palette == 0 && m_keyPressedColor.isValid()) {
+        if (m_palette == 0 ) {
             QBrush hilightBrush(m_keyPressedColor.lighter(200 - vel));
             key->setPressedBrush(hilightBrush);
         } else {
@@ -117,11 +124,17 @@ void PianoScene::showKeyOn( PianoKey* key, int vel )
         }
     }
     key->setPressed(true);
+    PianoKeybd* lpKB = (PianoKeybd*)parent();
+    lpKB->resize(lpKB->width()+100, lpKB->height());
+    lpKB->resize(lpKB->width()-100, lpKB->height());
 }
 
 void PianoScene::showKeyOff( PianoKey* key, int )
 {
     key->setPressed(false);
+    PianoKeybd* lpKB = (PianoKeybd*)parent();
+    lpKB->resize(lpKB->width()+100, lpKB->height());
+    lpKB->resize(lpKB->width()-100, lpKB->height());
 }
 
 void PianoScene::showNoteOn( const int note, QColor color, int vel )
@@ -197,20 +210,26 @@ void PianoScene::setColorFromPolicy(PianoKey* key, int vel)
 void PianoScene::keyOn( PianoKey* key )
 {
     triggerNoteOn(key->getNote(), m_velocity);
-    showKeyOn(key, m_velocity);
+    showKeyOn(key, QColor(255, 0, 0, 128), m_velocity);
+
+    qDebug() << key->getNote() << endl;
+
+    initializeAudio(QAudioDeviceInfo::defaultOutputDevice(), key->getNote()+48);
 }
 
 void PianoScene::keyOff( PianoKey* key )
 {
     triggerNoteOff(key->getNote(), 0);
     showKeyOff(key, 0);
+
+    m_audioOutput->stop();
 }
 
 void PianoScene::keyOn( PianoKey* key, qreal pressure )
 {
     int vel = m_velocity * pressure;
     triggerNoteOn(key->getNote(), vel);
-    showKeyOn(key, vel);
+    showKeyOn(key, QColor(255, 0, 0, 128), m_velocity);
 }
 
 void PianoScene::keyOff( PianoKey* key, qreal pressure )
@@ -403,6 +422,33 @@ bool PianoScene::event(QEvent *event)
             qDebug() << "accepted event: " << event;
             event->accept();
             return true;
+        }
+        break;
+    }  
+    case QEvent::GraphicsSceneMousePress:
+    {
+        QGraphicsSceneMouseEvent *mouseEvent = static_cast<QGraphicsSceneMouseEvent*>(event);
+        if (m_mouseEnabled)
+        {
+            PianoKey* key = getKeyForPos(mouseEvent->scenePos());
+            if (key != NULL && !key->isPressed())
+            {
+                keyOn(key);
+                m_mousePressed = true;
+            }
+        }
+        break;
+    }
+    case QEvent::GraphicsSceneMouseRelease:
+    {
+        QGraphicsSceneMouseEvent *mouseEvent = static_cast<QGraphicsSceneMouseEvent*>(event);
+        if (m_mouseEnabled)
+        {
+            m_mousePressed = false;
+            PianoKey* key = getKeyForPos(mouseEvent->scenePos());
+            if (key != NULL && key->isPressed()) {
+                keyOff(key);
+            }
         }
         break;
     }
@@ -633,7 +679,127 @@ void PianoScene::setShowColorScale(const bool show)
 
 void PianoScene::setPianoPalette(PianoPalette *p)
 {
-    //qDebug() << Q_FUNC_INFO;
+    qDebug() << Q_FUNC_INFO;
     resetKeyPressedColor();
     m_palette = p;
+}
+
+#define SAMPLE_RATE 44100
+#define SAMPLE_SIZE 2 //4: Float Buffer   2: Signed Int Buffer
+#define NUM_FRAMES SAMPLE_RATE
+#define NUM_CHANNELS 1
+#define NUM_SAMPLES (NUM_FRAMES * NUM_CHANNELS)
+
+
+Generator::Generator(const QAudioFormat &format
+    , qint64 durationUs
+    , int sampleRate)
+{
+    settings = new_fluid_settings();
+    synth = new_fluid_synth(settings);
+    fluid_synth_sfload(synth, "soundfont.sf2", 1);
+
+    if (format.isValid())
+        generateData(format, durationUs, sampleRate);
+}
+
+Generator::~Generator()
+{
+    delete_fluid_synth(synth);
+    delete_fluid_settings(settings);
+}
+
+void Generator::start()
+{
+    open(QIODevice::ReadOnly);
+}
+
+void Generator::stop()
+{
+    m_pos = 0;
+    close();
+}
+
+void Generator::generateData(const QAudioFormat &format, qint64 durationUs, int nKey)
+{
+    const int channelBytes = format.sampleSize() / 8;
+    const int sampleBytes = format.channelCount() * channelBytes;
+    qint64 length = (format.sampleRate() * format.channelCount() * (format.sampleSize() / 8))
+                        * durationUs / 1000000;
+
+    m_buffer.resize(length);
+    unsigned char *ptr = reinterpret_cast<unsigned char *>(m_buffer.data());
+    memset(ptr, 0, length);
+
+    fluid_synth_noteon(synth, 0, nKey, 127);
+
+    if( format.sampleType() == QAudioFormat::Float )
+        fluid_synth_write_float(synth, format.sampleRate(), m_buffer.data(), 0, NUM_CHANNELS, m_buffer.data(), 1, NUM_CHANNELS);
+    else if(format.sampleType() == QAudioFormat::SignedInt)
+        fluid_synth_write_s16(synth, format.sampleRate(), m_buffer.data(), 0, NUM_CHANNELS, m_buffer.data(), 1, NUM_CHANNELS);
+
+
+    fluid_synth_noteoff(synth, 0, nKey);
+
+//    FILE* file;
+//    fopen_s(&file, "test.pcm", "wb");
+//    fwrite(m_buffer.data(), 1, m_buffer.length(), file);
+//    fclose(file);
+}
+
+qint64 Generator::readData(char *data, qint64 len)
+{
+    qint64 total = 0;
+    if (!m_buffer.isEmpty()) {
+        while (len - total > 0) {
+            const qint64 chunk = qMin((m_buffer.size() - m_pos), len - total);
+            memcpy(data + total, m_buffer.constData() + m_pos, chunk);
+            m_pos = (m_pos + chunk) % m_buffer.size();
+            total += chunk;
+        }
+    }
+    return total;
+}
+
+qint64 Generator::writeData(const char *data, qint64 len)
+{
+    Q_UNUSED(data);
+    Q_UNUSED(len);
+
+    return 0;
+}
+
+qint64 Generator::bytesAvailable() const
+{
+    return m_buffer.size() + QIODevice::bytesAvailable();
+}
+
+void PianoScene::initializeAudio(const QAudioDeviceInfo &deviceInfo, int nKey)
+{
+    QAudioFormat format;
+    format.setSampleRate(SAMPLE_RATE);
+    format.setChannelCount(NUM_CHANNELS);
+    format.setSampleSize(SAMPLE_SIZE*8);
+    format.setCodec("audio/pcm");
+    format.setByteOrder(QAudioFormat::LittleEndian);
+
+    if( SAMPLE_SIZE==4 )
+        format.setSampleType(QAudioFormat::Float);
+    else if( SAMPLE_SIZE==2 )
+        format.setSampleType(QAudioFormat::SignedInt);
+
+    if (!deviceInfo.isFormatSupported(format)) {
+        qWarning() << "Default format not supported - trying to use nearest";
+        format = deviceInfo.nearestFormat(format);
+    }
+
+    m_generator.reset(new Generator(format, 1500000, nKey)); //1500000:duration us
+    m_audioOutput.reset(new QAudioOutput(deviceInfo, format));
+    m_generator->start();
+
+    QAudio::convertVolume(m_audioOutput->volume(),
+                                                QAudio::LinearVolumeScale,
+                                                QAudio::LogarithmicVolumeScale);
+
+    m_audioOutput->start(m_generator.data());
 }
