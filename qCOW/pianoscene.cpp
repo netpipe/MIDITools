@@ -25,6 +25,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QKeyEvent>
 #include <QDebug>
+#include <QThread>
 
 #include "pianokeybd.h"
 

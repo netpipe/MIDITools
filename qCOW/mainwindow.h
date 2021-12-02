@@ -2,7 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#ifdef RTMIDI
 #include "./rtmidi/RtMidi.h"
+#endif
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -32,7 +34,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-//    RtMidiIn  *midiin = 0;
-//    RtMidiOut *midiout = 0;
+    #ifdef RTMIDI
+    RtMidiIn  *midiin = 0;
+    RtMidiOut *midiout = 0;
+    #endif
 };
 #endif // MAINWINDOW_H

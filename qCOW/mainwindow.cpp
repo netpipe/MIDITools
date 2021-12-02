@@ -56,73 +56,77 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-//    std::map<int, std::string> apiMap;
-// //   apiMap[RtMidi::MACOSX_CORE] = "OS-X CoreMIDI";
-// //   apiMap[RtMidi::WINDOWS_MM] = "Windows MultiMedia";
-// //   apiMap[RtMidi::UNIX_JACK] = "Jack Client";
-//    apiMap[RtMidi::LINUX_ALSA] = "Linux ALSA";
-//  //  apiMap[RtMidi::RTMIDI_DUMMY] = "RtMidi Dummy";
+    #ifdef RTMIDI
+    std::map<int, std::string> apiMap;
+ //   apiMap[RtMidi::MACOSX_CORE] = "OS-X CoreMIDI";
+ //   apiMap[RtMidi::WINDOWS_MM] = "Windows MultiMedia";
+ //   apiMap[RtMidi::UNIX_JACK] = "Jack Client";
+    apiMap[RtMidi::LINUX_ALSA] = "Linux ALSA";
+  //  apiMap[RtMidi::RTMIDI_DUMMY] = "RtMidi Dummy";
 
-//    std::vector< RtMidi::Api > apis;
-//    RtMidi :: getCompiledApi( apis );
+    std::vector< RtMidi::Api > apis;
+    RtMidi :: getCompiledApi( apis );
 
-//    for ( unsigned int i=0; i<apis.size(); i++ )
-//      std::cout << "  " << apiMap[ apis[i] ] << std::endl;
+    for ( unsigned int i=0; i<apis.size(); i++ )
+      std::cout << "  " << apiMap[ apis[i] ] << std::endl;
 
-//    RtMidiIn  *midiin = 0;
-//    RtMidiOut *midiout = 0;
+    RtMidiIn  *midiin = 0;
+    RtMidiOut *midiout = 0;
 
-//    try {
+    try {
 
-//    midiin = new RtMidiIn();
+    midiin = new RtMidiIn();
 
-//    std::cout << "\nCurrent input API: " << apiMap[ midiin->getCurrentApi() ] << std::endl;
+    std::cout << "\nCurrent input API: " << apiMap[ midiin->getCurrentApi() ] << std::endl;
 
-//    // Check inputs.
-//    unsigned int nPorts = midiin->getPortCount();
-//    std::cout << "\nThere are " << nPorts << " MIDI input sources available.\n";
+    // Check inputs.
+    unsigned int nPorts = midiin->getPortCount();
+    std::cout << "\nThere are " << nPorts << " MIDI input sources available.\n";
 
-//    for ( unsigned i=0; i<nPorts; i++ ) {
-//      std::string portName = midiin->getPortName(i);
-//      std::cout << "  Input Port #" << i << ": " << portName << '\n';
-//        ui->inoutcmb->addItem( portName.c_str() + QString("a    ")  + QString::number(i) );
-//    }
+    for ( unsigned i=0; i<nPorts; i++ ) {
+      std::string portName = midiin->getPortName(i);
+      std::cout << "  Input Port #" << i << ": " << portName << '\n';
+        ui->inoutcmb->addItem( portName.c_str() + QString("a    ")  + QString::number(i) );
+    }
 
-//    // RtMidiOut constructor ... exception possible
-//    midiout = new RtMidiOut();
+    // RtMidiOut constructor ... exception possible
+    midiout = new RtMidiOut();
 
-//    std::cout << "\nCurrent output API: " << apiMap[ midiout->getCurrentApi() ] << std::endl;
+    std::cout << "\nCurrent output API: " << apiMap[ midiout->getCurrentApi() ] << std::endl;
 
-//    // Check outputs.
-//    nPorts = midiout->getPortCount();
-//    std::cout << "\nThere are " << nPorts << " MIDI output ports available.\n";
+    // Check outputs.
+    nPorts = midiout->getPortCount();
+    std::cout << "\nThere are " << nPorts << " MIDI output ports available.\n";
 
-//    for ( unsigned i=0; i<nPorts; i++ ) {
-//      std::string portName = midiout->getPortName(i);
-//      std::cout << "  Output Port #" << i << ": " << portName << std::endl;
-//      ui->inoutcmb->addItem( portName.c_str() + QString("a    ") + QString::number(i).toLatin1() );
-//    }
-//    std::cout << std::endl;
+    for ( unsigned i=0; i<nPorts; i++ ) {
+      std::string portName = midiout->getPortName(i);
+      std::cout << "  Output Port #" << i << ": " << portName << std::endl;
+      ui->inoutcmb->addItem( portName.c_str() + QString("a    ") + QString::number(i).toLatin1() );
+    }
+    std::cout << std::endl;
 
-//  } catch ( RtMidiError &error ) {
-//    error.printMessage();
-//  }
+  } catch ( RtMidiError &error ) {
+    error.printMessage();
+  }
 
-//midiin->closePort();
-//midiout->closePort();
+midiin->closePort();
+midiout->closePort();
 
-//midiout->openVirtualPort();
+midiout->openVirtualPort();
 
-//midiin->openVirtualPort();
-//midiin->setCallback( &mycallback );
-//midiin->ignoreTypes( false, false, false );
+midiin->openVirtualPort();
+midiin->setCallback( &mycallback );
+midiin->ignoreTypes( false, false, false );
+#endif
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-//    delete midiin;
-//    delete midiout;
+#ifdef RTMIDI
+    delete midiin;
+    delete midiout;
+#endif
 }
 
 
