@@ -32,7 +32,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    RtMidiIn  *midiin = 0;
-    RtMidiOut *midiout = 0;
+//    RtMidiIn  *midiin = 0;
+//    RtMidiOut *midiout = 0;
 };
 #endif // MAINWINDOW_H

@@ -92,6 +92,27 @@ PianoScene::PianoScene ( const int baseOctave,
     }
     hideOrShowKeys();
     retranslate();
+
+    settings = new_fluid_settings();
+    synth = new_fluid_synth(settings);
+    fluid_synth_sfload(synth, "soundfont.sf2", 1);
+}
+
+PianoScene::~PianoScene()
+{
+    delete_fluid_synth(synth);
+    delete_fluid_settings(settings);
+
+    for(int i=0; i<arrayKeyIndex.count(); i++)
+    {
+        delete arrayTimer[i];
+        delete arrayGenerator[i];
+        delete arrayAudioOutput[i];
+    }
+    arrayKeyIndex.clear();
+    arrayTimer.clear();
+    arrayGenerator.clear();
+    arrayAudioOutput.clear();
 }
 
 QSize PianoScene::sizeHint() const
@@ -211,18 +232,14 @@ void PianoScene::keyOn( PianoKey* key )
 {
     triggerNoteOn(key->getNote(), m_velocity);
     showKeyOn(key, QColor(255, 0, 0, 128), m_velocity);
-
-    qDebug() << key->getNote() << endl;
-
-    initializeAudio(QAudioDeviceInfo::defaultOutputDevice(), key->getNote()+48);
+    AppendSoundFontMusic(QAudioDeviceInfo::defaultOutputDevice(), key->getNote() );
 }
 
 void PianoScene::keyOff( PianoKey* key )
 {
     triggerNoteOff(key->getNote(), 0);
     showKeyOff(key, 0);
-
-    m_audioOutput->stop();
+    RemoveSoundFontMusic(key->getNote());
 }
 
 void PianoScene::keyOn( PianoKey* key, qreal pressure )
@@ -689,24 +706,20 @@ void PianoScene::setPianoPalette(PianoPalette *p)
 #define NUM_FRAMES SAMPLE_RATE
 #define NUM_CHANNELS 1
 #define NUM_SAMPLES (NUM_FRAMES * NUM_CHANNELS)
+#define TIME_INTERVAL 1200000 //1500000:duration us
 
 
-Generator::Generator(const QAudioFormat &format
-    , qint64 durationUs
-    , int sampleRate)
+Generator::Generator(fluid_synth_t* lpSynth, const QAudioFormat &format, qint64 durationUs, int nKey)
 {
-    settings = new_fluid_settings();
-    synth = new_fluid_synth(settings);
-    fluid_synth_sfload(synth, "soundfont.sf2", 1);
+    synth = lpSynth;
 
     if (format.isValid())
-        generateData(format, durationUs, sampleRate);
+        generateData(format, durationUs, nKey);
 }
 
 Generator::~Generator()
 {
-    delete_fluid_synth(synth);
-    delete_fluid_settings(settings);
+
 }
 
 void Generator::start()
@@ -774,8 +787,15 @@ qint64 Generator::bytesAvailable() const
     return m_buffer.size() + QIODevice::bytesAvailable();
 }
 
-void PianoScene::initializeAudio(const QAudioDeviceInfo &deviceInfo, int nKey)
+void PianoScene::AppendSoundFontMusic(const QAudioDeviceInfo &deviceInfo, int nKey)
 {
+    arrayKeyIndex.append( nKey );
+
+    QTimer* newTimer = new QTimer(this);
+    connect(newTimer, &QTimer::timeout, this, [=]() { updateSoundTimer(nKey); });
+    newTimer->start(TIME_INTERVAL/1000);
+    arrayTimer.append(newTimer);
+
     QAudioFormat format;
     format.setSampleRate(SAMPLE_RATE);
     format.setChannelCount(NUM_CHANNELS);
@@ -793,13 +813,61 @@ void PianoScene::initializeAudio(const QAudioDeviceInfo &deviceInfo, int nKey)
         format = deviceInfo.nearestFormat(format);
     }
 
-    m_generator.reset(new Generator(format, 1500000, nKey)); //1500000:duration us
-    m_audioOutput.reset(new QAudioOutput(deviceInfo, format));
+    Generator* m_generator = new Generator(synth, format, TIME_INTERVAL, nKey+48);
+    QAudioOutput* m_audioOutput = new QAudioOutput(deviceInfo, format);
     m_generator->start();
+    m_audioOutput->start(m_generator);
 
-    QAudio::convertVolume(m_audioOutput->volume(),
-                                                QAudio::LinearVolumeScale,
-                                                QAudio::LogarithmicVolumeScale);
-
-    m_audioOutput->start(m_generator.data());
+    arrayGenerator.append(m_generator);
+    arrayAudioOutput.append(m_audioOutput);
 }
+
+void PianoScene::RemoveSoundFontMusic(int nKey)
+{
+    for(int i=0; i<arrayKeyIndex.count(); i++)
+    {
+        if( nKey == arrayKeyIndex[i] )
+        {
+            arrayTimer[i]->stop();
+            arrayAudioOutput[i]->stop();
+            arrayGenerator[i]->stop();
+            delete arrayTimer[i];
+            delete arrayAudioOutput[i];
+            delete arrayGenerator[i];
+            arrayTimer.removeAt(i);
+            arrayAudioOutput.removeAt(i);
+            arrayGenerator.removeAt(i);
+            arrayKeyIndex.removeAt(i);
+        }
+    }
+}
+
+void PianoScene::updateSoundTimer(int nID)
+{
+    RemoveSoundFontMusic(nID);
+}
+
+//void PianoScene::initializeAudio(const QAudioDeviceInfo &deviceInfo, int nKey)
+//{
+////    QAudioFormat format;
+////    format.setSampleRate(SAMPLE_RATE);
+////    format.setChannelCount(NUM_CHANNELS);
+////    format.setSampleSize(SAMPLE_SIZE*8);
+////    format.setCodec("audio/pcm");
+////    format.setByteOrder(QAudioFormat::LittleEndian);
+
+////    if( SAMPLE_SIZE==4 )
+////        format.setSampleType(QAudioFormat::Float);
+////    else if( SAMPLE_SIZE==2 )
+////        format.setSampleType(QAudioFormat::SignedInt);
+
+////    if (!deviceInfo.isFormatSupported(format)) {
+////        qWarning() << "Default format not supported - trying to use nearest";
+////        format = deviceInfo.nearestFormat(format);
+////    }
+
+////    m_generator.reset(new Generator(format, TIME_INTERVAL, nKey));
+////    m_audioOutput.reset(new QAudioOutput(deviceInfo, format));
+////    m_generator->start();
+////    m_audioOutput->start(m_generator.data());
+//}

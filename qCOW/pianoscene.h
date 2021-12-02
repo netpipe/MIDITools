@@ -33,6 +33,7 @@
 #include <QDebug>
 #include <qmath.h>
 #include <qendian.h>
+#include <QTimer>
 
 #include "fluidlite.h"
 
@@ -41,11 +42,8 @@ class Generator : public QIODevice
     Q_OBJECT
 
 public:
-    Generator(const QAudioFormat &format, qint64 durationUs, int nKey);
+    Generator(fluid_synth_t* lpSynth, const QAudioFormat &format, qint64 durationUs, int nKey);
     ~Generator();
-
-    fluid_settings_t* settings;
-    fluid_synth_t* synth;
 
     void start();
     void stop();
@@ -60,6 +58,9 @@ private:
 private:
     qint64 m_pos = 0;
     QByteArray m_buffer;
+
+    fluid_synth_t* synth;
+
 };
 
 class PianoHandler
@@ -79,6 +80,7 @@ public:
                  const int numOctaves,
                  const QColor& keyPressedColor = QColor(),
                  QObject * parent = 0 );
+    ~PianoScene();
     
     QSize sizeHint() const;
     void setKeyboardMap( KeyboardMap* map ) { m_keybdMap = map; }
@@ -189,13 +191,25 @@ private:
 
 //Attributes
 public:
-    QScopedPointer<Generator> m_generator;
-    QScopedPointer<QAudioOutput> m_audioOutput;
+//    QScopedPointer<Generator> m_generator;
+//    QScopedPointer<QAudioOutput> m_audioOutput;
+
+    fluid_settings_t* settings;
+    fluid_synth_t* synth;
+
+    QList<int> arrayKeyIndex;
+    QList<QTimer*> arrayTimer;
+    QList<Generator*> arrayGenerator;
+    QList<QAudioOutput*> arrayAudioOutput;
 
 //Operators
 public:
-    void initializeAudio(const QAudioDeviceInfo &deviceInfo, int nKey);
+//    void initializeAudio(const QAudioDeviceInfo &deviceInfo, int nKey);
+    void AppendSoundFontMusic(const QAudioDeviceInfo &deviceInfo, int nKey);
+    void RemoveSoundFontMusic(int nKey);
 
+private slots:
+    void updateSoundTimer(int nID);
 };
 
 #endif /*PIANOSCENE_H_*/
