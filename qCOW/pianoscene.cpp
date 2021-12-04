@@ -705,7 +705,7 @@ void PianoScene::setPianoPalette(PianoPalette *p)
 #define SAMPLE_RATE 44100
 #define SAMPLE_SIZE 2 //4: Float Buffer   2: Signed Int Buffer
 #define NUM_FRAMES SAMPLE_RATE
-#define NUM_CHANNELS 1
+#define NUM_CHANNELS 2
 #define NUM_SAMPLES (NUM_FRAMES * NUM_CHANNELS)
 #define TIME_INTERVAL 1200000 //1500000:duration us
 

@@ -11,9 +11,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     QScrollArea* scrollArea = new QScrollArea(this);
     scrollArea->setWidget(ui->groupBox);
+        scrollArea->setWidgetResizable(true);
+      //  scrollArea->set
   //  scrollArea->sizePolicy() = QSizePolicy::Expanding;
   // scrollArea->setAutoFillBackground(1);
    //        ui->groupBox->setAutoFillBackground(1);
+                    setCentralWidget(scrollArea);
 }
 
 MainWindow::~MainWindow()
