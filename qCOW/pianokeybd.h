@@ -92,7 +92,7 @@ protected:
     void initScene(int base, int num, const QColor& c = QColor());
     void resizeEvent(QResizeEvent *event);
 
-private:
+public:
     int m_rotation;
     PianoScene *m_scene;
     KeyboardMap *m_rawMap;

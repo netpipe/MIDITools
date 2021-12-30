@@ -31,13 +31,16 @@ static void finish( int /*ignore*/ ){ done = true; }
 
 std::vector< unsigned char > *message2;
 
+//would like this to have through messages and also be able to play input messages to the synth
+//extra transpose and volume
+
 void mycallback( double deltatime, std::vector< unsigned char > *message, void */*userData*/ )
 {
     std::cout << (int)message->at(0) << ", "<< (int)message->at(1) << ", " << (int)message->at(2) << std::endl;
-
+//ui->pianokeybd->m_scene->keyOn(80);
 //  message2 = message;
 //  qDebug()<< message;
-
+//triggerNoteOn(60,122);
 }
 
 
@@ -132,17 +135,17 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-
-}
-
-
-void MainWindow::on_pushButton_3_clicked()
-{
 //    std::vector<unsigned char> message;
 //    message[0] = 144;
 //    message[1] = 64;
 //    message[2] = 90;
 //    midiout->sendMessage( &message );
+}
+
+
+void MainWindow::on_pushButton_3_clicked()
+{
+
 }
 
 void MainWindow::on_listPortsBTN_clicked()
@@ -154,7 +157,9 @@ void MainWindow::on_virtInBTN_clicked()
 {
       //  if ( chooseMidiPort( midiin ) == false ) goto cleanup;
 
-
+//ui->pianokeybd->m_scene->triggerNoteOn(80,122);
+ui->pianokeybd->m_scene->keyOn(80);
+        //ui->pianokeybd->getPianoScene()
 //cleanup:
 
 // delete midiin;
