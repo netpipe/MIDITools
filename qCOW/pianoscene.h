@@ -35,7 +35,7 @@
 #include <qendian.h>
 #include <QTimer>
 
-#include "fluidlite.h"
+#include "fluidlite/include/fluidlite.h"
 
 class Generator : public QIODevice
 {

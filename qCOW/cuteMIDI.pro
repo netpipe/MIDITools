@@ -32,24 +32,24 @@ SOURCES += \
     pianokeybd.cpp \
     pianopalette.cpp \
     pianoscene.cpp \
-    qFluidlite/fluidlite/fluid_chan.c \
-     qFluidlite/fluidlite/fluid_chorus.c \
-     qFluidlite/fluidlite/fluid_conv.c \
-     qFluidlite/fluidlite/fluid_defsfont.c \
-      qFluidlite/fluidlite/fluid_dsp_float.c \
-         qFluidlite/fluidlite/fluid_gen.c \
-         qFluidlite/fluidlite/fluid_hash.c \
-         qFluidlite/fluidlite/fluid_init.c \
-         qFluidlite/fluidlite/fluid_list.c \
-         qFluidlite/fluidlite/fluid_mod.c \
-         qFluidlite/fluidlite/fluid_ramsfont.c \
-         qFluidlite/fluidlite/fluid_rev.c \
-         qFluidlite/fluidlite/fluid_settings.c \
-         qFluidlite/fluidlite/fluid_synth.c \
-         qFluidlite/fluidlite/fluid_sys.c \
-         qFluidlite/fluidlite/fluid_tuning.c \
-         qFluidlite/fluidlite/fluid_voice.c \
-         qFluidlite/fluidlite/stb/stb_vorbis.c
+    ../qFluidlite/fluidlite/fluid_chan.c \
+     ../qFluidlite/fluidlite/fluid_chorus.c \
+     ../qFluidlite/fluidlite/fluid_conv.c \
+     ../qFluidlite/fluidlite/fluid_defsfont.c \
+     ../qFluidlite/fluidlite/fluid_dsp_float.c \
+         ../qFluidlite/fluidlite/fluid_gen.c \
+         ../qFluidlite/fluidlite/fluid_hash.c \
+         ../qFluidlite/fluidlite/fluid_init.c \
+         ../qFluidlite/fluidlite/fluid_list.c \
+         ../qFluidlite/fluidlite/fluid_mod.c \
+         ../qFluidlite/fluidlite/fluid_ramsfont.c \
+         ../qFluidlite/fluidlite/fluid_rev.c \
+         ../qFluidlite/fluidlite/fluid_settings.c \
+         ../qFluidlite/fluidlite/fluid_synth.c \
+         ../qFluidlite/fluidlite/fluid_sys.c \
+         ../qFluidlite/fluidlite/fluid_tuning.c \
+         ../qFluidlite/fluidlite/fluid_voice.c \
+         ../qFluidlite/fluidlite/stb/stb_vorbis.c
 
 HEADERS += \
     constants.h \
@@ -61,37 +61,37 @@ HEADERS += \
     pianokeybd.h \
     pianopalette.h \
     pianoscene.h \
-     qFluidlite/fluidlite/fluid_chan.h \
-     qFluidlite/fluidlite/fluid_chorus.h \
-     qFluidlite/fluidlite/fluid_config.h \
-     qFluidlite/fluidlite/fluid_conv.h \
-     qFluidlite/fluidlite/fluid_defsfont.h \
-     qFluidlite/fluidlite/fluid_gen.h \
-     qFluidlite/fluidlite/fluid_hash.h \
-     qFluidlite/fluidlite/fluid_list.h \
-     qFluidlite/fluidlite/fluid_midi.h \
-     qFluidlite/fluidlite/fluid_mod.h \
-     qFluidlite/fluidlite/fluid_phase.h \
-     qFluidlite/fluidlite/fluid_ramsfont.h \
-     qFluidlite/fluidlite/fluid_rev.h \
-     qFluidlite/fluidlite/fluid_settings.h \
-     qFluidlite/fluidlite/fluid_sfont.h \
-     qFluidlite/fluidlite/fluid_sys.h \
-     qFluidlite/fluidlite/fluid_tuning.h \
-     qFluidlite/fluidlite/fluid_voice.h \
-     qFluidlite/fluidlite/fluidsynth_priv.h \
-     qFluidlite/fluidlite/include/fluidlite.h \
-     qFluidlite/fluidlite/include/fluidsynth/gen.h \
-     qFluidlite/fluidlite/include/fluidsynth/log.h \
-     qFluidlite/fluidlite/include/fluidsynth/misc.h \
-     qFluidlite/fluidlite/include/fluidsynth/mod.h \
-     qFluidlite/fluidlite/include/fluidsynth/ramsfont.h \
-     qFluidlite/fluidlite/include/fluidsynth/settings.h \
-     qFluidlite/fluidlite/include/fluidsynth/sfont.h \
-     qFluidlite/fluidlite/include/fluidsynth/synth.h \
-     qFluidlite/fluidlite/include/fluidsynth/types.h \
-     qFluidlite/fluidlite/include/fluidsynth/version.h \
-     qFluidlite/fluidlite/include/fluidsynth/voice.h
+     ../qFluidlite/fluidlite/fluid_chan.h \
+     ../qFluidlite/fluidlite/fluid_chorus.h \
+     ../qFluidlite/fluidlite/fluid_config.h \
+     ../qFluidlite/fluidlite/fluid_conv.h \
+     ../qFluidlite/fluidlite/fluid_defsfont.h \
+     ../qFluidlite/fluidlite/fluid_gen.h \
+     ../qFluidlite/fluidlite/fluid_hash.h \
+     ../qFluidlite/fluidlite/fluid_list.h \
+     ../qFluidlite/fluidlite/fluid_midi.h \
+     ../qFluidlite/fluidlite/fluid_mod.h \
+     ../qFluidlite/fluidlite/fluid_phase.h \
+     ../qFluidlite/fluidlite/fluid_ramsfont.h \
+     ../qFluidlite/fluidlite/fluid_rev.h \
+     ../qFluidlite/fluidlite/fluid_settings.h \
+     ../qFluidlite/fluidlite/fluid_sfont.h \
+     ../qFluidlite/fluidlite/fluid_sys.h \
+     ../qFluidlite/fluidlite/fluid_tuning.h \
+     ../qFluidlite/fluidlite/fluid_voice.h \
+     ../qFluidlite/fluidlite/fluidsynth_priv.h \
+     ../qFluidlite/fluidlite/include/fluidlite.h \
+     ../qFluidlite/fluidlite/include/fluidsynth/gen.h \
+     ../qFluidlite/fluidlite/include/fluidsynth/log.h \
+     ../qFluidlite/fluidlite/include/fluidsynth/misc.h \
+     ../qFluidlite/fluidlite/include/fluidsynth/mod.h \
+     ../qFluidlite/fluidlite/include/fluidsynth/ramsfont.h \
+     ../qFluidlite/fluidlite/include/fluidsynth/settings.h \
+     ../qFluidlite/fluidlite/include/fluidsynth/sfont.h \
+     ../qFluidlite/fluidlite/include/fluidsynth/synth.h \
+     ../qFluidlite/fluidlite/include/fluidsynth/types.h \
+     ../qFluidlite/fluidlite/include/fluidsynth/version.h \
+     ../qFluidlite/fluidlite/include/fluidsynth/voice.h
 
 FORMS += \
     mainwindow.ui
